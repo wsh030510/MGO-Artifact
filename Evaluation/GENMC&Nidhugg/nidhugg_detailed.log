@@ -1,0 +1,3067 @@
+Nidhugg Detailed Log
+Start Time: Apr,27,2026
+------------------------------------------------
+>>> Testing: Layer1/0-datarace_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/0-datarace_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,6)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,8)
+                  (<0.1>,11)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,12)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,13)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,15)
+                             Error: Assertion violation at (<0.1>,18): (current_data == 42)
+
+------------------------------------------------
+
+>>> Testing: Layer1/13-CVE-2020-11739-Xen_genmc.ll (Model: SC)
+
+
+------------------------------------------------
+
+>>> Testing: Layer1/13-CVE-2020-11739-Xen_genmc.ll (Model: PSO)
+WARNING: Non-sequentially consistent CMPXCHG instruction interpreted as sequentially consistent.
+
+------------------------------------------------
+
+>>> Testing: Layer1/15-CVE-2020-25603-Xen_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/15-CVE-2020-25603-Xen_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,5)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,7)
+                  (<0.1>,10)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,11)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,12)
+                             Error: Assertion violation at (<0.1>,15): (atomic_load_explicit(&d_evtchn, memory_order_relaxed) == 1)
+
+------------------------------------------------
+
+>>> Testing: Layer1/17-ceph_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/17-ceph_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,5)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,7)
+                  (<0.1>,10)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,11)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,12)
+                             Error: Assertion violation at (<0.1>,15): (atomic_load_explicit(&locked_by, memory_order_relaxed) == 1)
+
+------------------------------------------------
+
+>>> Testing: Layer1/18-MariaDBEasy_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,4)
+    (<0.0>,5)
+    (<0.0>,6)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+      (<0.1>,1)
+      (<0.1>,6)
+      (<0.1>,7)
+      (<0.1>,8)
+      (<0.1>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+    (<0.0>,10)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,12)
+      (<0.1>,13)
+      (<0.1>,14)
+      (<0.1>,15)
+      (<0.1>,18)
+                 Error: Assertion violation at (<0.1>,21): (key == 1)
+
+------------------------------------------------
+
+>>> Testing: Layer1/18-MariaDBEasy_genmc.ll (Model: PSO)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                  (<0.1>,1)
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,7)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,9)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,11)
+                (<0.0/4>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,12)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,13)
+                            (<0.1/4>,1) UPDATE
+                  (<0.1>,15)
+                  (<0.1>,18)
+                             Error: Assertion violation at (<0.1>,21): (key == 1)
+
+------------------------------------------------
+
+>>> Testing: Layer1/19-DragonWell8Easy_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/19-DragonWell8Easy_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,5)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,7)
+                  (<0.1>,10)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,11)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,12)
+                             Error: Assertion violation at (<0.1>,15): (atomic_load_explicit(&table_data, memory_order_relaxed) == 42)
+
+------------------------------------------------
+
+>>> Testing: Layer1/1-Linuxeasy_genmc.ll (Model: SC)
+
+
+------------------------------------------------
+
+>>> Testing: Layer1/1-Linuxeasy_genmc.ll (Model: PSO)
+WARNING: Non-sequentially consistent CMPXCHG instruction interpreted as sequentially consistent.
+WARNING: Non-sequentially consistent RMW instruction interpreted as sequentially consistent.
+
+------------------------------------------------
+
+>>> Testing: Layer1/20-JDK_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/20-JDK_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,5)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,7)
+                  (<0.1>,10)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,11)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,12)
+                             Error: Assertion violation at (<0.1>,15): (atomic_load_explicit(&semaphore_val, memory_order_relaxed) == 1)
+
+------------------------------------------------
+
+>>> Testing: Layer1/21-libfabric_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/21-libfabric_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,5)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,7)
+                  (<0.1>,10)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,11)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,12)
+                             Error: Assertion violation at (<0.1>,15): (atomic_load_explicit(&cmd_data, memory_order_relaxed) == 99)
+
+------------------------------------------------
+
+>>> Testing: Layer1/22-openmpi_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/22-openmpi_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,5)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,7)
+                  (<0.1>,10)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,11)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,12)
+                             Error: Assertion violation at (<0.1>,15): (atomic_load_explicit(&next_ptr, memory_order_relaxed) == 1)
+
+------------------------------------------------
+
+>>> Testing: Layer1/23-includeos_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/23-includeos_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,5)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,7)
+                  (<0.1>,10)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,11)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,12)
+                             Error: Assertion violation at (<0.1>,15): (atomic_load_explicit(&desc_address, memory_order_relaxed) == 1111)
+
+------------------------------------------------
+
+>>> Testing: Layer1/24-mysql_genmc.ll (Model: SC)
+
+
+------------------------------------------------
+
+>>> Testing: Layer1/24-mysql_genmc.ll (Model: PSO)
+WARNING: Non-sequentially consistent CMPXCHG instruction interpreted as sequentially consistent.
+WARNING: Non-sequentially consistent RMW instruction interpreted as sequentially consistent.
+
+------------------------------------------------
+
+>>> Testing: Layer1/25-JDK-8179954_genmc.ll (Model: SC)
+Trace count: 3
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/25-JDK-8179954_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,7)
+  (<0>,9)
+          (<0.0>,1)
+            (<0.0/0>,1) UPDATE
+          (<0.0>,6)
+              (<0.0/1>,1) UPDATE
+          (<0.0>,7)
+                        (<0.1>,1)
+          (<0.0>,9)
+                  (<0.0/3>,1) UPDATE
+          (<0.0>,11)
+                    (<0.0/4>,1) UPDATE
+          (<0.0>,13)
+                      (<0.0/5>,1) UPDATE
+          (<0.0>,15)
+                        (<0.1>,2)
+                          (<0.1/0>,1) UPDATE
+                        (<0.1>,6)
+                            (<0.1/1>,1) UPDATE
+                        (<0.1>,7)
+                              (<0.1/2>,1) UPDATE
+                        (<0.1>,9)
+                (<0.0/2>,1) UPDATE
+  (<0>,10)
+  (<0>,11)
+                        (<0.1>,10)
+                                (<0.1/3>,1) UPDATE
+                        (<0.1>,11)
+                                  (<0.1/4>,1) UPDATE
+                        (<0.1>,13)
+                                    (<0.1/5>,1) UPDATE
+                        (<0.1>,15)
+  (<0>,12)
+  (<0>,13)
+      (<0/1>,1) UPDATE
+  (<0>,15)
+  (<0>,18)
+        (<0/2>,1) UPDATE
+  (<0>,20)
+           Error: Assertion violation at (<0>,23): (!(atomic_load_explicit(&r1, memory_order_relaxed) == 0 && atomic_load_explicit(&r2, memory_order_relaxed) == 0))
+
+------------------------------------------------
+
+>>> Testing: Layer1/26-ompi_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/26-ompi_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,5)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,7)
+                  (<0.1>,10)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,11)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,12)
+                             Error: Assertion violation at (<0.1>,15): (atomic_load_explicit(&hdr_size, memory_order_relaxed) == 1024)
+
+------------------------------------------------
+
+>>> Testing: Layer1/2-DPDK_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/2-DPDK_genmc.ll (Model: PSO)
+WARNING: Non-sequentially consistent RMW instruction interpreted as sequentially consistent.
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/3-sel4_genmc.ll (Model: SC)
+Trace count: 4
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/3-sel4_genmc.ll (Model: PSO)
+WARNING: Non-sequentially consistent RMW instruction interpreted as sequentially consistent.
+Trace count: 4
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/4-MySQL_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/4-MySQL_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,7)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,9)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,11)
+                  (<0.1>,14)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,15)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,16)
+                            (<0.1/4>,1) UPDATE
+                  (<0.1>,18)
+                             Error: Assertion violation at (<0.1>,21): (tid == 1001)
+
+------------------------------------------------
+
+>>> Testing: Layer1/5-StackOverFlowEasy_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/5-StackOverFlowEasy_genmc.ll (Model: PSO)
+Trace count: 5
+Sleepset-blocked trace count: 3
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/6-ompi_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/6-ompi_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,7)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,9)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,11)
+                  (<0.1>,14)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,15)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,16)
+                            (<0.1/4>,1) UPDATE
+                  (<0.1>,18)
+                             Error: Assertion violation at (<0.1>,21): (status == 0)
+
+------------------------------------------------
+
+>>> Testing: Layer1/7-OpenBLAS_genmc.ll (Model: SC)
+Trace count: 6
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/7-OpenBLAS_genmc.ll (Model: PSO)
+Trace count: 6
+Sleepset-blocked trace count: 4
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/barrier_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/barrier_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,5)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,7)
+                  (<0.1>,10)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,11)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,12)
+                             Error: Assertion violation at (<0.1>,15): (atomic_load_explicit(&data, memory_order_relaxed) == 42)
+
+------------------------------------------------
+
+>>> Testing: Layer1/crossbeam_genmc.ll (Model: SC)
+
+
+------------------------------------------------
+
+>>> Testing: Layer1/crossbeam_genmc.ll (Model: PSO)
+
+
+------------------------------------------------
+
+>>> Testing: Layer1/MariaDB-MDEV-6615_genmc.ll (Model: SC)
+
+
+------------------------------------------------
+
+>>> Testing: Layer1/MariaDB-MDEV-6615_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,7)
+      (<0/1>,1) UPDATE
+  (<0>,8)
+        (<0/2>,1) UPDATE
+  (<0>,10)
+          (<0/3>,1) UPDATE
+  (<0>,13)
+        (<0/2>,2) UPDATE
+  (<0>,15)
+            (<0.0>,1)
+              (<0.0/0>,1) UPDATE
+            (<0.0>,6)
+            (<0.0>,7)
+                (<0.0/1>,1) UPDATE
+            (<0.0>,9)
+                  (<0.0/2>,1) UPDATE
+            (<0.0>,14)
+                          (<0.1>,1)
+            (<0.0>,16)
+                      (<0.0/4>,1) UPDATE
+            (<0.0>,17)
+                        (<0.0/5>,1) UPDATE
+            (<0.0>,19)
+                          (<0.1>,2)
+                            (<0.1/0>,1) UPDATE
+                          (<0.1>,8)
+                          (<0.1>,9)
+                              (<0.1/1>,1) UPDATE
+                          (<0.1>,11)
+                          (<0.1>,15)
+                                (<0.1/2>,1) UPDATE
+                          (<0.1>,17)
+                                  (<0.1/3>,1) UPDATE
+                          (<0.1>,19)
+                    (<0.0/3>,1) UPDATE
+  (<0>,16)
+  (<0>,17)
+                          (<0.1>,20)
+                                    (<0.1/4>,1) UPDATE
+                          (<0.1>,21)
+                                      (<0.1/5>,1) UPDATE
+                          (<0.1>,23)
+                          (<0.1>,26)
+                                     Error: Assertion violation at (<0.1>,29): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer1/mcs_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,4)
+    (<0.0>,5)
+    (<0.0>,6)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+      (<0.1>,1)
+      (<0.1>,4)
+      (<0.1>,5)
+      (<0.1>,6)
+      (<0.1>,7)
+      (<0.1>,10)
+    (<0.0>,10)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,11)
+      (<0.1>,12)
+                 Error: Assertion violation at (<0.1>,15): (atomic_load_explicit(&prev_next, memory_order_relaxed) == 1)
+
+------------------------------------------------
+
+>>> Testing: Layer1/mcs_genmc.ll (Model: PSO)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                  (<0.1>,1)
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,5)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,7)
+                  (<0.1>,10)
+                (<0.0/4>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,11)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,12)
+                             Error: Assertion violation at (<0.1>,15): (atomic_load_explicit(&prev_next, memory_order_relaxed) == 1)
+
+------------------------------------------------
+
+>>> Testing: Layer1/mysql-99556_genmc.ll (Model: SC)
+
+
+------------------------------------------------
+
+>>> Testing: Layer1/mysql-99556_genmc.ll (Model: PSO)
+
+
+------------------------------------------------
+
+>>> Testing: Layer1/mysql_rwlock_deadlock_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/mysql_rwlock_deadlock_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,5)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,7)
+                  (<0.1>,10)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,11)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,12)
+                             Error: Assertion violation at (<0.1>,15): (atomic_load_explicit(&writer_thread_id, memory_order_relaxed) == 1001)
+
+------------------------------------------------
+
+>>> Testing: Layer1/mysql-ut-realx_genmc.ll (Model: SC)
+
+
+------------------------------------------------
+
+>>> Testing: Layer1/mysql-ut-realx_genmc.ll (Model: PSO)
+
+
+------------------------------------------------
+
+>>> Testing: Layer1/mysql_volatile_bug_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/mysql_volatile_bug_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,5)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,7)
+                  (<0.1>,10)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,11)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,12)
+                             Error: Assertion violation at (<0.1>,15): (atomic_load_explicit(&log_data, memory_order_relaxed) == 999)
+
+------------------------------------------------
+
+>>> Testing: Layer1/pso_test_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/pso_test_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,5)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,7)
+                  (<0.1>,10)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,11)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,12)
+                             Error: Assertion violation at (<0.1>,15): (atomic_load_explicit(&x, memory_order_relaxed) == 1)
+
+------------------------------------------------
+
+>>> Testing: Layer1/sofa_pbrpc_hang_genmc.ll (Model: SC)
+Trace count: 3
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/sofa_pbrpc_hang_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,7)
+  (<0>,9)
+          (<0.0>,1)
+            (<0.0/0>,1) UPDATE
+          (<0.0>,6)
+              (<0.0/1>,1) UPDATE
+          (<0.0>,7)
+                        (<0.1>,1)
+          (<0.0>,9)
+                  (<0.0/3>,1) UPDATE
+          (<0.0>,11)
+                    (<0.0/4>,1) UPDATE
+          (<0.0>,13)
+                      (<0.0/5>,1) UPDATE
+          (<0.0>,15)
+                        (<0.1>,2)
+                          (<0.1/0>,1) UPDATE
+                        (<0.1>,6)
+                            (<0.1/1>,1) UPDATE
+                        (<0.1>,7)
+                              (<0.1/2>,1) UPDATE
+                        (<0.1>,9)
+                (<0.0/2>,1) UPDATE
+  (<0>,10)
+  (<0>,11)
+                        (<0.1>,10)
+                                (<0.1/3>,1) UPDATE
+                        (<0.1>,11)
+                                  (<0.1/4>,1) UPDATE
+                        (<0.1>,13)
+                                    (<0.1/5>,1) UPDATE
+                        (<0.1>,15)
+  (<0>,12)
+  (<0>,13)
+      (<0/1>,1) UPDATE
+  (<0>,15)
+  (<0>,18)
+        (<0/2>,1) UPDATE
+  (<0>,20)
+           Error: Assertion violation at (<0>,23): (!(atomic_load_explicit(&r1, memory_order_relaxed) == 1 && atomic_load_explicit(&r2, memory_order_relaxed) == 0))
+
+------------------------------------------------
+
+>>> Testing: Layer1/tso_test_genmc.ll (Model: SC)
+Trace count: 3
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/tso_test_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,7)
+  (<0>,9)
+          (<0.0>,1)
+            (<0.0/0>,1) UPDATE
+          (<0.0>,6)
+              (<0.0/1>,1) UPDATE
+          (<0.0>,7)
+                        (<0.1>,1)
+          (<0.0>,9)
+                  (<0.0/3>,1) UPDATE
+          (<0.0>,11)
+                    (<0.0/4>,1) UPDATE
+          (<0.0>,13)
+                      (<0.0/5>,1) UPDATE
+          (<0.0>,15)
+                        (<0.1>,2)
+                          (<0.1/0>,1) UPDATE
+                        (<0.1>,6)
+                            (<0.1/1>,1) UPDATE
+                        (<0.1>,7)
+                              (<0.1/2>,1) UPDATE
+                        (<0.1>,9)
+                (<0.0/2>,1) UPDATE
+  (<0>,10)
+  (<0>,11)
+                        (<0.1>,10)
+                                (<0.1/3>,1) UPDATE
+                        (<0.1>,11)
+                                  (<0.1/4>,1) UPDATE
+                        (<0.1>,13)
+                                    (<0.1/5>,1) UPDATE
+                        (<0.1>,15)
+  (<0>,12)
+  (<0>,13)
+      (<0/1>,1) UPDATE
+  (<0>,15)
+  (<0>,18)
+        (<0/2>,1) UPDATE
+  (<0>,20)
+           Error: Assertion violation at (<0>,23): (!(atomic_load_explicit(&r1, memory_order_relaxed) == 0 && atomic_load_explicit(&r2, memory_order_relaxed) == 0))
+
+------------------------------------------------
+
+>>> Testing: Layer1/unsafe_publish_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer1/unsafe_publish_genmc.ll (Model: PSO)
+Trace count: 5
+Sleepset-blocked trace count: 3
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer2/10-smc2_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer2/10-smc2_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,7)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,9)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,11)
+                  (<0.1>,14)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,15)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,16)
+                            (<0.1/4>,1) UPDATE
+                  (<0.1>,18)
+                             Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/11-gsm_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,4)
+    (<0.0>,5)
+    (<0.0>,6)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+      (<0.1>,1)
+      (<0.1>,6)
+      (<0.1>,7)
+      (<0.1>,8)
+      (<0.1>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+    (<0.0>,10)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,12)
+      (<0.1>,13)
+      (<0.1>,14)
+      (<0.1>,15)
+      (<0.1>,18)
+                 Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/11-gsm_genmc.ll (Model: PSO)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                  (<0.1>,1)
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,7)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,9)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,11)
+                (<0.0/4>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,12)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,13)
+                            (<0.1/4>,1) UPDATE
+                  (<0.1>,15)
+                  (<0.1>,18)
+                             Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/1-rds_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer2/1-rds_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,7)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,9)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,11)
+                  (<0.1>,14)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,15)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,16)
+                            (<0.1/4>,1) UPDATE
+                  (<0.1>,18)
+                             Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/1-vlan_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer2/1-vlan_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,7)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,9)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,11)
+                  (<0.1>,14)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,15)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,16)
+                            (<0.1/4>,1) UPDATE
+                  (<0.1>,18)
+                             Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/1-vlan-s_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,3)
+    (<0.0>,4)
+    (<0.0>,5)
+      (<0.1>,1)
+      (<0.1>,8)
+      (<0.1>,9)
+    (<0.0>,6)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+      (<0.1>,12)
+      (<0.1>,13)
+      (<0.1>,16)
+      (<0.1>,17)
+      (<0.1>,18)
+      (<0.1>,19)
+      (<0.1>,20)
+  (<0>,10)
+  (<0>,11)
+           Error: Assertion violation at (<0>,14): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/1-vlan-s_genmc.ll (Model: PSO)
+WARNING: Non-sequentially consistent RMW instruction interpreted as sequentially consistent.
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,4)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,5)
+              (<0.1>,1)
+      (<0.0>,7)
+              (<0.1>,2)
+                (<0.1/0>,1) UPDATE
+              (<0.1>,9)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+              (<0.1>,10)
+                  (<0.1/1>,1) UPDATE
+              (<0.1>,11)
+                    (<0.1/2>,1) UPDATE
+              (<0.1>,13)
+                      (<0.1/3>,1) UPDATE
+              (<0.1>,17)
+              (<0.1>,18)
+                        (<0.1/4>,1) UPDATE
+              (<0.1>,20)
+  (<0>,10)
+  (<0>,11)
+           Error: Assertion violation at (<0>,14): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/2-watchqueue_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer2/2-watchqueue_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+                  (<0.1>,1)
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,7)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,9)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,11)
+                  (<0.1>,14)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,15)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,16)
+                            (<0.1/4>,1) UPDATE
+                  (<0.1>,18)
+                             Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/3-vmci_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,4)
+    (<0.0>,5)
+    (<0.0>,6)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+      (<0.1>,1)
+      (<0.1>,6)
+      (<0.1>,7)
+      (<0.1>,8)
+      (<0.1>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+    (<0.0>,10)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,12)
+      (<0.1>,13)
+      (<0.1>,14)
+      (<0.1>,15)
+      (<0.1>,18)
+                 Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/3-vmci_genmc.ll (Model: PSO)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                  (<0.1>,1)
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,7)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,9)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,11)
+                (<0.0/4>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,12)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,13)
+                            (<0.1/4>,1) UPDATE
+                  (<0.1>,15)
+                  (<0.1>,18)
+                             Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/3-xsk_genmc.ll (Model: SC)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+  (<0>,8)
+    (<0.0>,1)
+    (<0.0>,7)
+      (<0.1>,1)
+      (<0.1>,5)
+      (<0.1>,6)
+      (<0.1>,7)
+      (<0.1>,8)
+    (<0.0>,8)
+    (<0.0>,9)
+    (<0.0>,10)
+    (<0.0>,11)
+    (<0.0>,12)
+    (<0.0>,15)
+    (<0.0>,16)
+    (<0.0>,17)
+  (<0>,9)
+  (<0>,10)
+      (<0.1>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+      (<0.1>,12)
+      (<0.1>,13)
+  (<0>,11)
+  (<0>,12)
+  (<0>,13)
+  (<0>,14)
+           Error: Assertion violation at (<0>,17): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/3-xsk_genmc.ll (Model: PSO)
+WARNING: Non-sequentially consistent RMW instruction interpreted as sequentially consistent.
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,6)
+  (<0>,8)
+        (<0.0>,1)
+          (<0.0/0>,1) UPDATE
+                    (<0.1>,1)
+                      (<0.1/0>,1) UPDATE
+                    (<0.1>,6)
+                        (<0.1/1>,1) UPDATE
+                    (<0.1>,7)
+                          (<0.1/2>,1) UPDATE
+        (<0.0>,8)
+            (<0.0/1>,1) UPDATE
+        (<0.0>,10)
+              (<0.0/2>,1) UPDATE
+        (<0.0>,12)
+                (<0.0/3>,1) UPDATE
+        (<0.0>,16)
+                  (<0.0/4>,1) UPDATE
+        (<0.0>,18)
+  (<0>,9)
+  (<0>,10)
+                    (<0.1>,9)
+                            (<0.1/3>,1) UPDATE
+                    (<0.1>,10)
+                    (<0.1>,11)
+                              (<0.1/4>,1) UPDATE
+                    (<0.1>,13)
+  (<0>,11)
+  (<0>,12)
+      (<0/1>,1) UPDATE
+  (<0>,14)
+           Error: Assertion violation at (<0>,17): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/4-xdp_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,4)
+    (<0.0>,5)
+    (<0.0>,6)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+      (<0.1>,1)
+      (<0.1>,6)
+      (<0.1>,7)
+      (<0.1>,8)
+      (<0.1>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+    (<0.0>,10)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,12)
+      (<0.1>,13)
+      (<0.1>,14)
+      (<0.1>,15)
+      (<0.1>,18)
+                 Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/4-xdp_genmc.ll (Model: PSO)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                  (<0.1>,1)
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,7)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,9)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,11)
+                (<0.0/4>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,12)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,13)
+                            (<0.1/4>,1) UPDATE
+                  (<0.1>,15)
+                  (<0.1>,18)
+                             Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/4-xsk2_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,5)
+    (<0.0>,6)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+    (<0.0>,10)
+    (<0.0>,11)
+    (<0.0>,12)
+    (<0.0>,13)
+      (<0.1>,1)
+      (<0.1>,8)
+      (<0.1>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+      (<0.1>,12)
+      (<0.1>,13)
+      (<0.1>,14)
+      (<0.1>,15)
+      (<0.1>,16)
+      (<0.1>,17)
+    (<0.0>,14)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,18)
+      (<0.1>,19)
+      (<0.1>,20)
+      (<0.1>,21)
+      (<0.1>,24)
+      (<0.1>,27)
+                 Error: Assertion violation at (<0.1>,30): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/4-xsk2_genmc.ll (Model: PSO)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,6)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,7)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,9)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,10)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,12)
+                  (<0.0/5>,1) UPDATE
+      (<0.0>,13)
+                      (<0.1>,1)
+      (<0.0>,15)
+                      (<0.1>,2)
+                        (<0.1/0>,1) UPDATE
+                      (<0.1>,9)
+                          (<0.1/1>,1) UPDATE
+                      (<0.1>,11)
+                            (<0.1/2>,1) UPDATE
+                      (<0.1>,13)
+                              (<0.1/3>,1) UPDATE
+                      (<0.1>,15)
+                                (<0.1/4>,1) UPDATE
+                      (<0.1>,17)
+                    (<0.0/6>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                      (<0.1>,18)
+                                  (<0.1/5>,1) UPDATE
+                      (<0.1>,19)
+                                    (<0.1/6>,1) UPDATE
+                      (<0.1>,21)
+                      (<0.1>,24)
+                      (<0.1>,27)
+                                 Error: Assertion violation at (<0.1>,30): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/5-fs_genmc.ll (Model: SC)
+Trace count: 1
+
+ Error detected:
+  (<0>,1)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+  (<0>,8)
+    (<0.0>,1)
+    (<0.0>,3)
+    (<0.0>,4)
+    (<0.0>,5)
+    (<0.0>,6)
+  (<0>,9)
+  (<0>,10)
+      (<0.1>,1)
+      (<0.1>,5)
+      (<0.1>,6)
+      (<0.1>,7)
+      (<0.1>,8)
+      (<0.1>,9)
+      (<0.1>,10)
+      (<0.1>,13)
+      (<0.1>,14)
+      (<0.1>,15)
+  (<0>,11)
+  (<0>,12)
+  (<0>,13)
+  (<0>,14)
+           Error: Assertion violation at (<0>,17): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/5-fs_genmc.ll (Model: PSO)
+Trace count: 1
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,6)
+  (<0>,8)
+        (<0.0>,1)
+          (<0.0/0>,1) UPDATE
+        (<0.0>,4)
+            (<0.0/1>,1) UPDATE
+        (<0.0>,5)
+              (<0.0/2>,1) UPDATE
+        (<0.0>,7)
+  (<0>,9)
+  (<0>,10)
+                (<0.1>,1)
+                  (<0.1/0>,1) UPDATE
+                (<0.1>,6)
+                    (<0.1/1>,1) UPDATE
+                (<0.1>,8)
+                      (<0.1/2>,1) UPDATE
+                (<0.1>,10)
+                        (<0.1/3>,1) UPDATE
+                (<0.1>,14)
+                          (<0.1/4>,1) UPDATE
+                (<0.1>,16)
+  (<0>,11)
+  (<0>,12)
+      (<0/1>,1) UPDATE
+  (<0>,14)
+           Error: Assertion violation at (<0>,17): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/5-tls_genmc.ll (Model: SC)
+Trace count: 1
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,5)
+    (<0.0>,6)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+    (<0.0>,10)
+    (<0.0>,11)
+    (<0.0>,12)
+    (<0.0>,13)
+    (<0.0>,16)
+               Error: Assertion violation at (<0.0>,19): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/5-tls_genmc.ll (Model: PSO)
+Trace count: 1
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,6)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,7)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,9)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,11)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,13)
+      (<0.0>,16)
+                 Error: Assertion violation at (<0.0>,19): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/6-bpf_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,4)
+    (<0.0>,5)
+    (<0.0>,6)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+      (<0.1>,1)
+      (<0.1>,6)
+      (<0.1>,7)
+      (<0.1>,8)
+      (<0.1>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+    (<0.0>,10)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,12)
+      (<0.1>,13)
+      (<0.1>,14)
+      (<0.1>,15)
+      (<0.1>,18)
+                 Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/6-bpf_genmc.ll (Model: PSO)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                  (<0.1>,1)
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,7)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,9)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,11)
+                (<0.0/4>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,12)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,13)
+                            (<0.1/4>,1) UPDATE
+                  (<0.1>,15)
+                  (<0.1>,18)
+                             Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/7-nbd_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,5)
+    (<0.0>,6)
+    (<0.0>,8)
+    (<0.0>,11)
+    (<0.0>,12)
+    (<0.0>,13)
+    (<0.0>,14)
+    (<0.0>,15)
+    (<0.0>,17)
+    (<0.0>,19)
+    (<0.0>,21)
+    (<0.0>,24)
+    (<0.0>,25)
+    (<0.0>,26)
+    (<0.0>,27)
+    (<0.0>,28)
+    (<0.0>,30)
+    (<0.0>,32)
+    (<0.0>,34)
+    (<0.0>,37)
+    (<0.0>,38)
+    (<0.0>,39)
+    (<0.0>,40)
+    (<0.0>,41)
+    (<0.0>,43)
+    (<0.0>,45)
+    (<0.0>,47)
+    (<0.0>,50)
+    (<0.0>,51)
+    (<0.0>,52)
+    (<0.0>,53)
+    (<0.0>,54)
+    (<0.0>,56)
+    (<0.0>,58)
+    (<0.0>,60)
+    (<0.0>,63)
+    (<0.0>,64)
+    (<0.0>,65)
+    (<0.0>,66)
+    (<0.0>,67)
+    (<0.0>,69)
+    (<0.0>,71)
+    (<0.0>,73)
+    (<0.0>,76)
+    (<0.0>,77)
+    (<0.0>,78)
+    (<0.0>,79)
+    (<0.0>,80)
+    (<0.0>,82)
+    (<0.0>,84)
+    (<0.0>,86)
+    (<0.0>,89)
+    (<0.0>,90)
+    (<0.0>,91)
+    (<0.0>,92)
+    (<0.0>,93)
+    (<0.0>,95)
+    (<0.0>,97)
+    (<0.0>,99)
+    (<0.0>,102)
+    (<0.0>,103)
+    (<0.0>,104)
+    (<0.0>,105)
+    (<0.0>,106)
+    (<0.0>,108)
+    (<0.0>,110)
+    (<0.0>,112)
+    (<0.0>,115)
+    (<0.0>,116)
+    (<0.0>,117)
+    (<0.0>,118)
+    (<0.0>,119)
+    (<0.0>,121)
+    (<0.0>,123)
+    (<0.0>,125)
+    (<0.0>,128)
+    (<0.0>,129)
+      (<0.1>,1)
+      (<0.1>,4)
+      (<0.1>,5)
+    (<0.0>,130)
+    (<0.0>,131)
+    (<0.0>,132)
+    (<0.0>,134)
+    (<0.0>,136)
+    (<0.0>,138)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,6)
+      (<0.1>,7)
+      (<0.1>,8)
+      (<0.1>,9)
+                Error: Assertion violation at (<0.1>,12): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/7-nbd_genmc.ll (Model: PSO)
+WARNING: Non-sequentially consistent RMW instruction interpreted as sequentially consistent.
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,6)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,7)
+      (<0.0>,8)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,12)
+      (<0.0>,13)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,15)
+      (<0.0>,17)
+          (<0.0/1>,2) UPDATE
+      (<0.0>,20)
+      (<0.0>,21)
+            (<0.0/2>,2) UPDATE
+      (<0.0>,25)
+      (<0.0>,26)
+              (<0.0/3>,2) UPDATE
+      (<0.0>,28)
+      (<0.0>,30)
+          (<0.0/1>,3) UPDATE
+      (<0.0>,33)
+      (<0.0>,34)
+            (<0.0/2>,3) UPDATE
+      (<0.0>,38)
+      (<0.0>,39)
+              (<0.0/3>,3) UPDATE
+      (<0.0>,41)
+      (<0.0>,43)
+          (<0.0/1>,4) UPDATE
+      (<0.0>,46)
+      (<0.0>,47)
+            (<0.0/2>,4) UPDATE
+      (<0.0>,51)
+      (<0.0>,52)
+              (<0.0/3>,4) UPDATE
+      (<0.0>,54)
+      (<0.0>,56)
+          (<0.0/1>,5) UPDATE
+      (<0.0>,59)
+      (<0.0>,60)
+            (<0.0/2>,5) UPDATE
+      (<0.0>,64)
+      (<0.0>,65)
+              (<0.0/3>,5) UPDATE
+      (<0.0>,67)
+      (<0.0>,69)
+          (<0.0/1>,6) UPDATE
+      (<0.0>,72)
+      (<0.0>,73)
+            (<0.0/2>,6) UPDATE
+      (<0.0>,77)
+      (<0.0>,78)
+              (<0.0/3>,6) UPDATE
+      (<0.0>,80)
+      (<0.0>,82)
+          (<0.0/1>,7) UPDATE
+      (<0.0>,85)
+      (<0.0>,86)
+            (<0.0/2>,7) UPDATE
+      (<0.0>,90)
+      (<0.0>,91)
+              (<0.0/3>,7) UPDATE
+      (<0.0>,93)
+      (<0.0>,95)
+          (<0.0/1>,8) UPDATE
+      (<0.0>,98)
+      (<0.0>,99)
+            (<0.0/2>,8) UPDATE
+      (<0.0>,103)
+      (<0.0>,104)
+              (<0.0/3>,8) UPDATE
+      (<0.0>,106)
+      (<0.0>,108)
+          (<0.0/1>,9) UPDATE
+      (<0.0>,111)
+      (<0.0>,112)
+            (<0.0/2>,9) UPDATE
+      (<0.0>,116)
+      (<0.0>,117)
+              (<0.0/3>,9) UPDATE
+      (<0.0>,119)
+      (<0.0>,121)
+          (<0.0/1>,10) UPDATE
+      (<0.0>,124)
+      (<0.0>,125)
+            (<0.0/2>,10) UPDATE
+      (<0.0>,129)
+                (<0.1>,1)
+                  (<0.1/0>,1) UPDATE
+                (<0.1>,5)
+      (<0.0>,130)
+              (<0.0/3>,10) UPDATE
+      (<0.0>,132)
+      (<0.0>,134)
+          (<0.0/1>,11) UPDATE
+      (<0.0>,137)
+      (<0.0>,138)
+  (<0>,8)
+  (<0>,9)
+                (<0.1>,6)
+                    (<0.1/1>,1) UPDATE
+                (<0.1>,7)
+                      (<0.1/2>,1) UPDATE
+                (<0.1>,9)
+                          Error: Assertion violation at (<0.1>,12): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/7-xdp2_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,3)
+    (<0.0>,4)
+    (<0.0>,5)
+      (<0.1>,1)
+      (<0.1>,8)
+      (<0.1>,9)
+    (<0.0>,6)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+      (<0.1>,12)
+      (<0.1>,13)
+      (<0.1>,16)
+      (<0.1>,17)
+      (<0.1>,18)
+      (<0.1>,19)
+      (<0.1>,20)
+  (<0>,10)
+  (<0>,11)
+           Error: Assertion violation at (<0>,14): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/7-xdp2_genmc.ll (Model: PSO)
+WARNING: Non-sequentially consistent RMW instruction interpreted as sequentially consistent.
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,4)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,5)
+              (<0.1>,1)
+      (<0.0>,7)
+              (<0.1>,2)
+                (<0.1/0>,1) UPDATE
+              (<0.1>,9)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+              (<0.1>,10)
+                  (<0.1/1>,1) UPDATE
+              (<0.1>,11)
+                    (<0.1/2>,1) UPDATE
+              (<0.1>,13)
+                      (<0.1/3>,1) UPDATE
+              (<0.1>,17)
+              (<0.1>,18)
+                        (<0.1/4>,1) UPDATE
+              (<0.1>,20)
+  (<0>,10)
+  (<0>,11)
+           Error: Assertion violation at (<0>,14): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/9-tls2_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,4)
+    (<0.0>,5)
+    (<0.0>,6)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+      (<0.1>,1)
+      (<0.1>,6)
+      (<0.1>,7)
+      (<0.1>,8)
+      (<0.1>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+    (<0.0>,10)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,12)
+      (<0.1>,13)
+      (<0.1>,14)
+      (<0.1>,15)
+      (<0.1>,18)
+                 Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/9-tls2_genmc.ll (Model: PSO)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                  (<0.1>,1)
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,7)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,9)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,11)
+                (<0.0/4>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,12)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,13)
+                            (<0.1/4>,1) UPDATE
+                  (<0.1>,15)
+                  (<0.1>,18)
+                             Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/9-unix_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,4)
+    (<0.0>,5)
+    (<0.0>,6)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+      (<0.1>,1)
+      (<0.1>,6)
+      (<0.1>,7)
+      (<0.1>,8)
+      (<0.1>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+    (<0.0>,10)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,12)
+      (<0.1>,13)
+      (<0.1>,14)
+      (<0.1>,15)
+      (<0.1>,18)
+                 Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/9-unix_genmc.ll (Model: PSO)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                  (<0.1>,1)
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,7)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,9)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,11)
+                (<0.0/4>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,12)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,13)
+                            (<0.1/4>,1) UPDATE
+                  (<0.1>,15)
+                  (<0.1>,18)
+                             Error: Assertion violation at (<0.1>,21): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/9-unix-s_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,3)
+    (<0.0>,4)
+    (<0.0>,5)
+      (<0.1>,1)
+      (<0.1>,8)
+      (<0.1>,9)
+    (<0.0>,6)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+      (<0.1>,12)
+      (<0.1>,13)
+      (<0.1>,16)
+      (<0.1>,17)
+      (<0.1>,18)
+      (<0.1>,19)
+      (<0.1>,20)
+  (<0>,10)
+  (<0>,11)
+           Error: Assertion violation at (<0>,14): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/9-unix-s_genmc.ll (Model: PSO)
+WARNING: Non-sequentially consistent RMW instruction interpreted as sequentially consistent.
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,4)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,5)
+              (<0.1>,1)
+      (<0.0>,7)
+              (<0.1>,2)
+                (<0.1/0>,1) UPDATE
+              (<0.1>,9)
+            (<0.0/2>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+              (<0.1>,10)
+                  (<0.1/1>,1) UPDATE
+              (<0.1>,11)
+                    (<0.1/2>,1) UPDATE
+              (<0.1>,13)
+                      (<0.1/3>,1) UPDATE
+              (<0.1>,17)
+              (<0.1>,18)
+                        (<0.1/4>,1) UPDATE
+              (<0.1>,20)
+  (<0>,10)
+  (<0>,11)
+           Error: Assertion violation at (<0>,14): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/tcve-2016-8655_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+  (<0>,8)
+    (<0.0>,1)
+    (<0.0>,5)
+    (<0.0>,6)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+    (<0.0>,10)
+    (<0.0>,11)
+    (<0.0>,12)
+    (<0.0>,13)
+      (<0.1>,1)
+      (<0.1>,5)
+      (<0.1>,6)
+    (<0.0>,14)
+  (<0>,9)
+  (<0>,10)
+      (<0.1>,7)
+      (<0.1>,8)
+      (<0.1>,9)
+      (<0.1>,10)
+      (<0.1>,13)
+      (<0.1>,14)
+      (<0.1>,15)
+  (<0>,11)
+  (<0>,12)
+  (<0>,13)
+  (<0>,14)
+           Error: Assertion violation at (<0>,17): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/tcve-2016-8655_genmc.ll (Model: PSO)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,6)
+  (<0>,8)
+        (<0.0>,1)
+          (<0.0/0>,1) UPDATE
+        (<0.0>,6)
+            (<0.0/1>,1) UPDATE
+        (<0.0>,7)
+              (<0.0/2>,1) UPDATE
+        (<0.0>,9)
+                (<0.0/3>,1) UPDATE
+        (<0.0>,10)
+              (<0.0/2>,2) UPDATE
+        (<0.0>,12)
+                  (<0.0/4>,1) UPDATE
+        (<0.0>,13)
+                    (<0.1>,1)
+        (<0.0>,15)
+                    (<0.1>,2)
+                      (<0.1/0>,1) UPDATE
+                    (<0.1>,6)
+              (<0.0/2>,3) UPDATE
+  (<0>,9)
+  (<0>,10)
+                    (<0.1>,7)
+                        (<0.1/1>,1) UPDATE
+                    (<0.1>,8)
+                          (<0.1/2>,1) UPDATE
+                    (<0.1>,10)
+                            (<0.1/3>,1) UPDATE
+                    (<0.1>,14)
+                              (<0.1/4>,1) UPDATE
+                    (<0.1>,16)
+  (<0>,11)
+  (<0>,12)
+      (<0/1>,1) UPDATE
+  (<0>,14)
+           Error: Assertion violation at (<0>,17): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/tcve-2017-2636_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,4)
+    (<0.0>,5)
+    (<0.0>,6)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+      (<0.1>,1)
+      (<0.1>,7)
+      (<0.1>,8)
+      (<0.1>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+      (<0.1>,12)
+    (<0.0>,10)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,13)
+      (<0.1>,14)
+      (<0.1>,15)
+      (<0.1>,16)
+      (<0.1>,19)
+      (<0.1>,22)
+      (<0.1>,23)
+      (<0.1>,24)
+                 Error: Assertion violation at (<0.1>,25): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/tcve-2017-2636_genmc.ll (Model: PSO)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                  (<0.1>,1)
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,8)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,10)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,12)
+                (<0.0/4>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,13)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,14)
+                            (<0.1/4>,1) UPDATE
+                  (<0.1>,16)
+                  (<0.1>,19)
+                              (<0.1/5>,1) UPDATE
+                  (<0.1>,23)
+                                (<0.1/6>,1) UPDATE
+                  (<0.1>,25)
+                             Error: Assertion violation at (<0.1>,25): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/tcve-2018-12232_genmc.ll (Model: SC)
+Trace count: 1
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,4)
+    (<0.0>,5)
+    (<0.0>,6)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,1)
+      (<0.1>,6)
+      (<0.1>,7)
+      (<0.1>,8)
+      (<0.1>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+      (<0.1>,12)
+      (<0.1>,13)
+      (<0.1>,14)
+      (<0.1>,15)
+      (<0.1>,16)
+      (<0.1>,19)
+      (<0.1>,20)
+                 Error: Assertion violation at (<0.1>,23): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/tcve-2018-12232_genmc.ll (Model: PSO)
+WARNING: Non-sequentially consistent RMW instruction interpreted as sequentially consistent.
+Trace count: 1
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+      (<0.0>,7)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,9)
+  (<0>,8)
+  (<0>,9)
+              (<0.1>,1)
+                (<0.1/0>,1) UPDATE
+              (<0.1>,7)
+                  (<0.1/1>,1) UPDATE
+              (<0.1>,9)
+                    (<0.1/2>,1) UPDATE
+              (<0.1>,11)
+                      (<0.1/3>,1) UPDATE
+              (<0.1>,13)
+                        (<0.1/4>,1) UPDATE
+              (<0.1>,15)
+              (<0.1>,16)
+              (<0.1>,19)
+              (<0.1>,20)
+                         Error: Assertion violation at (<0.1>,23): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/tcve-2019-6974_genmc.ll (Model: SC)
+Trace count: 1
+
+ Error detected:
+  (<0>,1)
+  (<0>,6)
+  (<0>,7)
+  (<0>,8)
+  (<0>,9)
+    (<0.0>,1)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+    (<0.0>,10)
+    (<0.0>,11)
+    (<0.0>,12)
+    (<0.0>,13)
+    (<0.0>,14)
+    (<0.0>,17)
+    (<0.0>,18)
+    (<0.0>,19)
+    (<0.0>,20)
+    (<0.0>,21)
+  (<0>,10)
+  (<0>,11)
+      (<0.1>,1)
+      (<0.1>,6)
+      (<0.1>,7)
+      (<0.1>,8)
+      (<0.1>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+      (<0.1>,14)
+      (<0.1>,15)
+      (<0.1>,16)
+      (<0.1>,17)
+      (<0.1>,18)
+                 Error: Assertion violation at (<0.1>,19): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/tcve-2019-6974_genmc.ll (Model: PSO)
+WARNING: Non-sequentially consistent RMW instruction interpreted as sequentially consistent.
+Trace count: 1
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,7)
+  (<0>,9)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,8)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,9)
+      (<0.0>,10)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,12)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,14)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,18)
+      (<0.0>,19)
+                  (<0.0/5>,1) UPDATE
+      (<0.0>,21)
+  (<0>,10)
+  (<0>,11)
+                    (<0.1>,1)
+                      (<0.1/0>,1) UPDATE
+                    (<0.1>,7)
+                        (<0.1/1>,1) UPDATE
+                    (<0.1>,9)
+                          (<0.1/2>,1) UPDATE
+                    (<0.1>,11)
+                            (<0.1/3>,1) UPDATE
+                    (<0.1>,15)
+                    (<0.1>,16)
+                              (<0.1/4>,1) UPDATE
+                    (<0.1>,18)
+                               Error: Assertion violation at (<0.1>,19): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/watchqueue_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,4)
+  (<0>,5)
+  (<0>,6)
+  (<0>,7)
+    (<0.0>,1)
+    (<0.0>,4)
+    (<0.0>,5)
+    (<0.0>,6)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+      (<0.1>,1)
+      (<0.1>,7)
+      (<0.1>,8)
+      (<0.1>,9)
+      (<0.1>,10)
+      (<0.1>,11)
+      (<0.1>,12)
+    (<0.0>,10)
+  (<0>,8)
+  (<0>,9)
+      (<0.1>,13)
+      (<0.1>,14)
+      (<0.1>,15)
+      (<0.1>,16)
+      (<0.1>,19)
+      (<0.1>,22)
+      (<0.1>,23)
+      (<0.1>,24)
+                 Error: Assertion violation at (<0.1>,25): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/watchqueue_genmc.ll (Model: PSO)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,5)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,6)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,8)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,9)
+                  (<0.1>,1)
+      (<0.0>,11)
+                  (<0.1>,2)
+                    (<0.1/0>,1) UPDATE
+                  (<0.1>,8)
+                      (<0.1/1>,1) UPDATE
+                  (<0.1>,10)
+                        (<0.1/2>,1) UPDATE
+                  (<0.1>,12)
+                (<0.0/4>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                  (<0.1>,13)
+                          (<0.1/3>,1) UPDATE
+                  (<0.1>,14)
+                            (<0.1/4>,1) UPDATE
+                  (<0.1>,16)
+                  (<0.1>,19)
+                              (<0.1/5>,1) UPDATE
+                  (<0.1>,23)
+                                (<0.1/6>,1) UPDATE
+                  (<0.1>,25)
+                             Error: Assertion violation at (<0.1>,25): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/xsk_genmc.ll (Model: SC)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+  (<0>,8)
+  (<0>,9)
+  (<0>,10)
+  (<0>,11)
+    (<0.0>,1)
+    (<0.0>,5)
+      (<0.1>,1)
+      (<0.1>,4)
+      (<0.1>,5)
+      (<0.1>,6)
+      (<0.1>,7)
+    (<0.0>,6)
+    (<0.0>,7)
+    (<0.0>,8)
+    (<0.0>,9)
+    (<0.0>,10)
+               Error: Assertion violation at (<0.0>,13): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer2/xsk_genmc.ll (Model: PSO)
+Trace count: 2
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,9)
+  (<0>,11)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+              (<0.1>,1)
+                (<0.1/0>,1) UPDATE
+              (<0.1>,5)
+                  (<0.1/1>,1) UPDATE
+              (<0.1>,6)
+                    (<0.1/2>,1) UPDATE
+      (<0.0>,6)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,8)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,10)
+                 Error: Assertion violation at (<0.0>,13): (0)
+
+------------------------------------------------
+
+>>> Testing: Layer3/8-smc_genmc.ll (Model: SC)
+WARNING: Calling unknown external function strcmp as blackbox.
+Trace count: 14
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer3/8-smc_genmc.ll (Model: PSO)
+WARNING: Calling unknown external function strcmp as blackbox.
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,3)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,8)
+      (<0.0>,9)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,13)
+                    (<0.1>,1)
+      (<0.0>,15)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,16)
+                  (<0.0/5>,1) UPDATE
+      (<0.0>,18)
+                    (<0.1>,2)
+                      (<0.1/0>,1) UPDATE
+                    (<0.1>,3)
+                    (<0.1>,7)
+                        (<0.1/1>,1) UPDATE
+                    (<0.1>,9)
+                    (<0.1>,12)
+              (<0.0/3>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                    (<0.1>,13)
+                          (<0.1/2>,1) UPDATE
+                    (<0.1>,14)
+                            (<0.1/3>,1) UPDATE
+                    (<0.1>,16)
+                               Error: Assertion violation at (<0.1>,19): (state == 1)
+
+------------------------------------------------
+
+>>> Testing: Layer3/8-smc-high_genmc.ll (Model: SC)
+WARNING: Calling unknown external function printf as blackbox.
+Trace count: 2
+No errors were detected.
+BUG: sendmmsg executed before setsockopt
+
+------------------------------------------------
+
+>>> Testing: Layer3/8-smc-high_genmc.ll (Model: PSO)
+WARNING: Non-sequentially consistent RMW instruction interpreted as sequentially consistent.
+WARNING: Calling unknown external function printf as blackbox.
+Trace count: 2
+No errors were detected.
+BUG: sendmmsg executed before setsockopt
+
+------------------------------------------------
+
+>>> Testing: Layer3/8-tls_genmc.ll (Model: SC)
+Trace count: 2
+No errors were detected.
+
+------------------------------------------------
+
+>>> Testing: Layer3/8-tls_genmc.ll (Model: PSO)
+Trace count: 3
+
+ Error detected:
+  (<0>,1)
+    (<0/0>,1) UPDATE
+  (<0>,5)
+  (<0>,7)
+      (<0.0>,1)
+        (<0.0/0>,1) UPDATE
+      (<0.0>,3)
+          (<0.0/1>,1) UPDATE
+      (<0.0>,10)
+            (<0.0/2>,1) UPDATE
+      (<0.0>,11)
+              (<0.0/3>,1) UPDATE
+      (<0.0>,12)
+                (<0.0/4>,1) UPDATE
+      (<0.0>,16)
+                              (<0.1>,1)
+      (<0.0>,18)
+                    (<0.0/6>,1) UPDATE
+      (<0.0>,27)
+                      (<0.0/7>,1) UPDATE
+      (<0.0>,28)
+                        (<0.0/8>,1) UPDATE
+      (<0.0>,29)
+      (<0.0>,32)
+                          (<0.0/9>,1) UPDATE
+      (<0.0>,36)
+                            (<0.0/10>,1) UPDATE
+      (<0.0>,38)
+                              (<0.1>,2)
+                                (<0.1/0>,1) UPDATE
+                              (<0.1>,3)
+                              (<0.1>,7)
+                                  (<0.1/1>,1) UPDATE
+                              (<0.1>,9)
+                              (<0.1>,12)
+                  (<0.0/5>,1) UPDATE
+  (<0>,8)
+  (<0>,9)
+                              (<0.1>,13)
+                                    (<0.1/2>,1) UPDATE
+                              (<0.1>,14)
+                                      (<0.1/3>,1) UPDATE
+                              (<0.1>,16)
+                                         Error: Assertion violation at (<0.1>,19): (val == 1)
+
+------------------------------------------------
+
+>>> Testing: Layer3/8-tls-high_genmc.ll (Model: SC)
+WARNING: Calling unknown external function printf as blackbox.
+Trace count: 2
+No errors were detected.
+BUG: write executed before TLS configuration
+
+------------------------------------------------
+
+>>> Testing: Layer3/8-tls-high_genmc.ll (Model: PSO)
+WARNING: Non-sequentially consistent RMW instruction interpreted as sequentially consistent.
+WARNING: Calling unknown external function printf as blackbox.
+Trace count: 2
+No errors were detected.
+BUG: write executed before TLS configuration
+
+------------------------------------------------
+

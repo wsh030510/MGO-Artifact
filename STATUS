@@ -1,0 +1,36 @@
+Badges Applied For: Available, Reusable
+
+=== Justification for "Available" ===
+
+This artifact has been deposited on Zenodo with a permanent DOI (to be provided upon acceptance).
+All source code, evaluation scripts, and experimental results are publicly accessible under the
+CC-BY-4.0 license. The artifact includes the complete MGO (Multi-Granularity Ordering) dataset
+of 58 real-world ordering-related concurrency bugs, along with automated evaluation pipelines
+for four verification tools (CBMC, GenMC, Nidhugg, IRhunter).
+
+=== Justification for "Reusable" ===
+
+The artifact is carefully structured and documented to facilitate reuse and repurposing:
+
+1. Well-organized taxonomy: 58 bug samples are hierarchically categorized across three
+   abstraction layers (Micro-Instruction Level, Resource Lifecycle Level, Semantic Logic Level), with clear
+   labeling including bug ID, source provenance, target system, bug type, and dates.
+
+2. Automated evaluation scripts: Each tool directory (CBMC, GENMC&Nidhugg, IRhunter)
+   includes ready-to-run shell scripts that batch-execute experiments and produce
+   structured CSV summary reports. Reviewers can reproduce all paper claims with
+   minimal manual effort.
+
+3. Verified results: Pre-computed CSV summary reports are included for cross-validation,
+   allowing reviewers to confirm that their runs match the paper's reported findings.
+
+4. Containerized environment: IRhunter dependencies are encapsulated via Docker images,
+   eliminating installation friction. The Docker configurations are fully documented.
+
+5. Extensibility: The dataset is tool-agnostic. New verification tools can be applied to
+   the same bug samples by following the documented evaluation pattern. The three-layer
+   taxonomy provides a clear framework for comparative studies.
+
+6. Detailed documentation: Step-by-step reproduction instructions are provided for each
+   tool, including expected outputs, interpretation guidelines for CSV reports, and
+   troubleshooting notes for known edge cases (e.g., CBMC pointer-handling limitations).

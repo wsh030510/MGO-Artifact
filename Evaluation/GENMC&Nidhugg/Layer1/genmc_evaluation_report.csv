@@ -1,0 +1,33 @@
+Bug_ID,File_Name,Relaxed_Result,SC_Result,Conclusion
+N/A,0-datarace_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,13-CVE-2020-11739-Xen_genmc.c,SUCCESS (No Bug),SUCCESS (Safe),False Negative
+N/A,15-CVE-2020-25603-Xen_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,17-ceph_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,18-MariaDBEasy_genmc.c,FAILED (Assertion),FAILED (Assertion),Logic Bug
+N/A,19-DragonWell8Easy_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,1-Linuxeasy_genmc.c,SUCCESS (No Bug),SUCCESS (Safe),False Negative
+N/A,20-JDK_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,21-libfabric_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,22-openmpi_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,23-includeos_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,24-mysql_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,25-JDK-8179954_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,26-ompi_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,2-DPDK_genmc.c,SUCCESS (No Bug),SUCCESS (Safe),False Negative
+N/A,3-sel4_genmc.c,SUCCESS (No Bug),SUCCESS (Safe),False Negative
+N/A,4-MySQL_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,5-StackOverFlowEasy_genmc.c,FAILED (Data Race),SUCCESS (Safe),Confirmed WMM Bug
+N/A,6-ompi_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,7-OpenBLAS_genmc.c,SUCCESS (No Bug),SUCCESS (Safe),False Negative
+N/A,barrier_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,crossbeam_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,MariaDB-MDEV-6615_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,mcs_genmc.c,FAILED (Assertion),FAILED (Assertion),Logic Bug
+N/A,mysql-99556_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,mysql_rwlock_deadlock_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,mysql-ut-realx_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,mysql_volatile_bug_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,pso_test_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,sofa_pbrpc_hang_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,tso_test_genmc.c,FAILED (Assertion),SUCCESS (Safe),Confirmed WMM Bug
+N/A,unsafe_publish_genmc.c,FAILED (Data Race),SUCCESS (Safe),Confirmed WMM Bug

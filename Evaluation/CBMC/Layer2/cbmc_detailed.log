@@ -1,0 +1,1603 @@
+CBMC Detailed Log
+Start Time: 2026年 04月 27日 星期一 22:25:16 HKT
+------------------------------------------------
+>>> Testing: 1-rds.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 1-rds.c
+Converting
+Type-checking 1-rds
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 1-rds.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 1-rds.c
+Converting
+Type-checking 1-rds
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 2-vlan.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 2-vlan.c
+Converting
+Type-checking 2-vlan
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared s_igmp: 2R/1W
+Shared s_kcm: 2R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[0]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[1]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[2]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[3]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[4]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[5]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[6]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[7]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[8]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[9]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[10]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[11]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[12]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[13]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[14]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[15]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_family: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[0]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[1]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[2]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[3]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[4]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[5]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[6]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[7]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[8]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[9]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[10]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[11]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[12]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[13]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..$pad2: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[0]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[1]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[2]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[3]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[4]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[5]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[6]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[7]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[8]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[9]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[10]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[11]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[12]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[13]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[14]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[15]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_family: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[0]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[1]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[2]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[3]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[4]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[5]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[6]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[7]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[8]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[9]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[10]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[11]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[12]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[13]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..$pad2: 1R/2W
+size of program expression: 9157 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 2-vlan.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 2-vlan.c
+Converting
+Type-checking 2-vlan
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared s_igmp: 2R/1W
+Shared s_kcm: 2R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[0]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[1]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[2]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[3]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[4]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[5]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[6]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[7]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[8]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[9]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[10]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[11]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[12]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[13]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[14]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_name[[15]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_family: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[0]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[1]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[2]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[3]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[4]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[5]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[6]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[7]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[8]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[9]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[10]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[11]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[12]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..sa_data[[13]]: 1R/2W
+Shared thread_config::1::ifr!1@1..ifr_hwaddr..$pad2: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[0]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[1]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[2]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[3]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[4]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[5]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[6]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[7]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[8]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[9]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[10]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[11]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[12]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[13]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[14]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_name[[15]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_family: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[0]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[1]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[2]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[3]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[4]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[5]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[6]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[7]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[8]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[9]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[10]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[11]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[12]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..sa_data[[13]]: 1R/2W
+Shared thread_transmit::1::ifr!2@1..ifr_hwaddr..$pad2: 1R/2W
+size of program expression: 4814 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 3-vlan-s.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 3-vlan-s.c
+Converting
+Type-checking 3-vlan-s
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared s_kcm: 2R/1W
+Shared s_igmp: 2R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[0]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[1]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[2]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[3]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[4]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[5]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[6]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[7]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[8]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[9]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[10]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[11]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[12]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[13]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[14]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[15]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_family: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[0]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[1]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[2]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[3]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[4]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[5]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[6]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[7]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[8]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[9]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[10]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[11]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[12]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[13]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..$pad2: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[0]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[1]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[2]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[3]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[4]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[5]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[6]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[7]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[8]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[9]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[10]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[11]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[12]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[13]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[14]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[15]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_family: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[0]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[1]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[2]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[3]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[4]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[5]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[6]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[7]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[8]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[9]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[10]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[11]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[12]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[13]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..$pad2: 1R/2W
+size of program expression: 9157 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 3-vlan-s.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 3-vlan-s.c
+Converting
+Type-checking 3-vlan-s
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared s_kcm: 2R/1W
+Shared s_igmp: 2R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[0]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[1]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[2]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[3]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[4]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[5]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[6]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[7]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[8]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[9]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[10]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[11]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[12]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[13]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[14]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_name[[15]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_family: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[0]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[1]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[2]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[3]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[4]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[5]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[6]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[7]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[8]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[9]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[10]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[11]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[12]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..sa_data[[13]]: 1R/2W
+Shared thread_vlan::1::ifr!1@1..ifr_hwaddr..$pad2: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[0]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[1]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[2]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[3]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[4]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[5]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[6]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[7]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[8]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[9]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[10]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[11]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[12]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[13]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[14]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_name[[15]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_family: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[0]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[1]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[2]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[3]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[4]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[5]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[6]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[7]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[8]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[9]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[10]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[11]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[12]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..sa_data[[13]]: 1R/2W
+Shared thread_hw_write::1::ifr!2@1..ifr_hwaddr..$pad2: 1R/2W
+size of program expression: 4814 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 4-xsk2.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 4-xsk2.c
+Converting
+Type-checking 4-xsk2
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared xdp_fd: 4R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_setup_ring::1::sxdp!1@1..sxdp_family: 1R/2W
+Shared thread_setup_ring::1::sxdp!1@1..sxdp_ifindex: 1R/2W
+size of program expression: 656 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 4-xsk2.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 4-xsk2.c
+Converting
+Type-checking 4-xsk2
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared xdp_fd: 4R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_setup_ring::1::sxdp!1@1..sxdp_family: 1R/2W
+Shared thread_setup_ring::1::sxdp!1@1..sxdp_ifindex: 1R/2W
+size of program expression: 507 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 5-fs.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 5-fs.c
+Converting
+Type-checking 5-fs
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared socks[[0]]: 4R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 544 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 5-fs.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 5-fs.c
+Converting
+Type-checking 5-fs
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared socks[[0]]: 4R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 409 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 6-bpf.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 6-bpf.c
+Converting
+Type-checking 6-bpf
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared u_sock: 2R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 548 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 6-bpf.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 6-bpf.c
+Converting
+Type-checking 6-bpf
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared u_sock: 2R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 435 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 7-xdp2.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 7-xdp2.c
+Converting
+Type-checking 7-xdp2
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared tun_fd: 1R/1W
+Shared xdp_fd: 3R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_tx_ring::1::fds!2@1[[0]]..fd: 1R/2W
+Shared thread_tx_ring::1::fds!2@1[[0]]..events: 1R/2W
+Shared thread_tx_ring::1::fds!2@1[[0]]..revents: 1R/2W
+Shared thread_tx_ring::1::fds!2@1[[1]]..fd: 1R/2W
+Shared thread_tx_ring::1::fds!2@1[[1]]..events: 1R/2W
+Shared thread_tx_ring::1::fds!2@1[[1]]..revents: 1R/2W
+size of program expression: 929 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 7-xdp2.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 7-xdp2.c
+Converting
+Type-checking 7-xdp2
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared tun_fd: 1R/1W
+Shared xdp_fd: 3R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_tx_ring::1::fds!2@1[[0]]..fd: 1R/2W
+Shared thread_tx_ring::1::fds!2@1[[0]]..events: 1R/2W
+Shared thread_tx_ring::1::fds!2@1[[0]]..revents: 1R/2W
+Shared thread_tx_ring::1::fds!2@1[[1]]..fd: 1R/2W
+Shared thread_tx_ring::1::fds!2@1[[1]]..events: 1R/2W
+Shared thread_tx_ring::1::fds!2@1[[1]]..revents: 1R/2W
+size of program expression: 684 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 8-watchqueue.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 8-watchqueue.c
+Converting
+Type-checking 8-watchqueue
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared pipe_fds[[0]]: 4R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 542 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 8-watchqueue.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 8-watchqueue.c
+Converting
+Type-checking 8-watchqueue
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared pipe_fds[[0]]: 4R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 423 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 9-tls2.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 9-tls2.c
+Converting
+Type-checking 9-tls2
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared sock_fd: 6R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_repair_connect::1::addr!1@1..sin6_family: 1R/2W
+Shared thread_repair_connect::1::addr!1@1..sin6_addr[[0]]: 1R/2W
+Shared thread_repair_connect::1::addr!1@1..sin6_addr[[1]]: 1R/2W
+Shared thread_repair_connect::1::addr!1@1..sin6_addr[[2]]: 1R/2W
+Shared thread_repair_connect::1::addr!1@1..sin6_addr[[3]]: 1R/2W
+size of program expression: 825 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 9-tls2.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 9-tls2.c
+Converting
+Type-checking 9-tls2
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared sock_fd: 6R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_repair_connect::1::addr!1@1..sin6_family: 1R/2W
+Shared thread_repair_connect::1::addr!1@1..sin6_addr[[0]]: 1R/2W
+Shared thread_repair_connect::1::addr!1@1..sin6_addr[[1]]: 1R/2W
+Shared thread_repair_connect::1::addr!1@1..sin6_addr[[2]]: 1R/2W
+Shared thread_repair_connect::1::addr!1@1..sin6_addr[[3]]: 1R/2W
+size of program expression: 625 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 10-smc2.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 10-smc2.c
+Converting
+Type-checking 10-smc2
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 10-smc2.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 10-smc2.c
+Converting
+Type-checking 10-smc2
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 11-gsm.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 11-gsm.c
+Converting
+Type-checking 11-gsm
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared fd: 4R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_term::1::t!2@1[[0]]: 1R/2W
+Shared thread_term::1::t!2@1[[1]]: 1R/2W
+Shared thread_term::1::t!2@1[[2]]: 1R/2W
+Shared thread_term::1::t!2@1[[3]]: 1R/2W
+Shared thread_term::1::t!2@1[[4]]: 1R/2W
+Shared thread_term::1::t!2@1[[5]]: 1R/2W
+Shared thread_term::1::t!2@1[[6]]: 1R/2W
+Shared thread_term::1::t!2@1[[7]]: 1R/2W
+Shared thread_term::1::t!2@1[[8]]: 1R/2W
+Shared thread_term::1::t!2@1[[9]]: 1R/2W
+size of program expression: 1148 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 11-gsm.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 11-gsm.c
+Converting
+Type-checking 11-gsm
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared fd: 4R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_term::1::t!2@1[[0]]: 1R/2W
+Shared thread_term::1::t!2@1[[1]]: 1R/2W
+Shared thread_term::1::t!2@1[[2]]: 1R/2W
+Shared thread_term::1::t!2@1[[3]]: 1R/2W
+Shared thread_term::1::t!2@1[[4]]: 1R/2W
+Shared thread_term::1::t!2@1[[5]]: 1R/2W
+Shared thread_term::1::t!2@1[[6]]: 1R/2W
+Shared thread_term::1::t!2@1[[7]]: 1R/2W
+Shared thread_term::1::t!2@1[[8]]: 1R/2W
+Shared thread_term::1::t!2@1[[9]]: 1R/2W
+size of program expression: 810 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 12-xsk.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 12-xsk.c
+Converting
+Type-checking 12-xsk
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared xdp_fd: 7R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 616 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 12-xsk.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 12-xsk.c
+Converting
+Type-checking 12-xsk
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared xdp_fd: 7R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 498 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 13-xdp.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 13-xdp.c
+Converting
+Type-checking 13-xdp
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared tun_fd: 1R/1W
+Shared xdp_fd: 3R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[0]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[1]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[2]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[3]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[4]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[5]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[6]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[7]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[8]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[9]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[10]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[11]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[12]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[13]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[14]]: 1R/2W
+Shared thread_poll::1::fds!2@1[[0]]..fd: 1R/2W
+Shared thread_poll::1::fds!2@1[[0]]..events: 1R/2W
+Shared thread_poll::1::fds!2@1[[0]]..revents: 1R/2W
+Shared thread_poll::1::fds!2@1[[1]]..fd: 1R/2W
+Shared thread_poll::1::fds!2@1[[1]]..events: 1R/2W
+Shared thread_poll::1::fds!2@1[[1]]..revents: 1R/2W
+size of program expression: 2026 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 13-xdp.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 13-xdp.c
+Converting
+Type-checking 13-xdp
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared tun_fd: 1R/1W
+Shared xdp_fd: 3R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[0]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[1]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[2]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[3]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[4]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[5]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[6]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[7]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[8]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[9]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[10]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[11]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[12]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[13]]: 1R/2W
+Shared thread_bpf::1::dummy_attr!1@1[[14]]: 1R/2W
+Shared thread_poll::1::fds!2@1[[0]]..fd: 1R/2W
+Shared thread_poll::1::fds!2@1[[0]]..events: 1R/2W
+Shared thread_poll::1::fds!2@1[[0]]..revents: 1R/2W
+Shared thread_poll::1::fds!2@1[[1]]..fd: 1R/2W
+Shared thread_poll::1::fds!2@1[[1]]..events: 1R/2W
+Shared thread_poll::1::fds!2@1[[1]]..revents: 1R/2W
+size of program expression: 1301 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 14-vmci.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 14-vmci.c
+Converting
+Type-checking 14-vmci
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared epfd: 2R/1W
+Shared vmci_fd: 8R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_epoll::1::ev!2@1..events: 1R/2W
+Shared thread_epoll::1::ev!2@1..fd: 1R/2W
+size of program expression: 674 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 14-vmci.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 14-vmci.c
+Converting
+Type-checking 14-vmci
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared epfd: 2R/1W
+Shared vmci_fd: 8R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_epoll::1::ev!2@1..events: 1R/2W
+Shared thread_epoll::1::ev!2@1..fd: 1R/2W
+size of program expression: 543 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 15-tls.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 15-tls.c
+Converting
+Type-checking 15-tls
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 15-tls.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 15-tls.c
+Converting
+Type-checking 15-tls
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 16-nbd.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 16-nbd.c
+Converting
+Type-checking 16-nbd
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Unwinding loop thread_netlink.0 iteration 1 file 16-nbd.c line 12 function thread_netlink thread 1
+Unwinding loop thread_netlink.0 iteration 2 file 16-nbd.c line 12 function thread_netlink thread 1
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared nl_sock: 4R/1W
+Shared nbd_fd: 4R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[0]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[1]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[2]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[3]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[4]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[5]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[6]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[7]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[8]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[9]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[10]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[11]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[12]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[13]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[14]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[15]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[16]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[17]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[18]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[19]]: 1R/2W
+size of program expression: 2489 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 16-nbd.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 16-nbd.c
+Converting
+Type-checking 16-nbd
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Unwinding loop thread_netlink.0 iteration 1 file 16-nbd.c line 12 function thread_netlink thread 1
+Unwinding loop thread_netlink.0 iteration 2 file 16-nbd.c line 12 function thread_netlink thread 1
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared nl_sock: 4R/1W
+Shared nbd_fd: 4R/1W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[0]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[1]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[2]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[3]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[4]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[5]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[6]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[7]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[8]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[9]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[10]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[11]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[12]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[13]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[14]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[15]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[16]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[17]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[18]]: 1R/2W
+Shared thread_netlink::1::dummy_msg!1@1[[19]]: 1R/2W
+size of program expression: 1530 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 17-unix.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 17-unix.c
+Converting
+Type-checking 17-unix
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared u_sock: 6R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 598 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 17-unix.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 17-unix.c
+Converting
+Type-checking 17-unix
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared u_sock: 6R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 480 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 18-unix-s.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 18-unix-s.c
+Converting
+Type-checking 18-unix-s
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared u_sock: 6R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 598 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 18-unix-s.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 18-unix-s.c
+Converting
+Type-checking 18-unix-s
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared u_sock: 6R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 480 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 19-tcve-2016-8655.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 19-tcve-2016-8655.c
+Converting
+Type-checking 19-tcve-2016-8655
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared fd: 6R/1W
+Shared main::1::t0!0@1: 2R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared thread_0::1::dummy_req!1@1[[0]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[1]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[2]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[3]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[4]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[5]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[6]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[7]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[8]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[9]]: 1R/2W
+size of program expression: 1267 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 19-tcve-2016-8655.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 19-tcve-2016-8655.c
+Converting
+Type-checking 19-tcve-2016-8655
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared fd: 6R/1W
+Shared main::1::t0!0@1: 2R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared thread_0::1::dummy_req!1@1[[0]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[1]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[2]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[3]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[4]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[5]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[6]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[7]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[8]]: 1R/2W
+Shared thread_0::1::dummy_req!1@1[[9]]: 1R/2W
+size of program expression: 877 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 20-tcve-2017-2636.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 20-tcve-2017-2636.c
+Converting
+Type-checking 20-tcve-2017-2636
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared fd: 12R/2W
+Shared main::1::t0!0@1: 2R/2W
+Shared main::1::t1!0@1: 2R/2W
+size of program expression: 704 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 20-tcve-2017-2636.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 20-tcve-2017-2636.c
+Converting
+Type-checking 20-tcve-2017-2636
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared fd: 12R/2W
+Shared main::1::t0!0@1: 2R/2W
+Shared main::1::t1!0@1: 2R/2W
+size of program expression: 586 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 21-tcve-2018-12232.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 21-tcve-2018-12232.c
+Converting
+Type-checking 21-tcve-2018-12232
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared uid: 3R/2W
+Shared gid: 3R/2W
+Shared sv[[0]]: 7R/2W
+Shared sv[[1]]: 4R/2W
+Shared main::1::t0!0@1: 2R/2W
+Shared main::1::t1!0@1: 2R/2W
+size of program expression: 893 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 21-tcve-2018-12232.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 21-tcve-2018-12232.c
+Converting
+Type-checking 21-tcve-2018-12232
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared uid: 3R/2W
+Shared gid: 3R/2W
+Shared sv[[0]]: 7R/2W
+Shared sv[[1]]: 4R/2W
+Shared main::1::t0!0@1: 2R/2W
+Shared main::1::t1!0@1: 2R/2W
+size of program expression: 667 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 22-tcve-2019-6974.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 22-tcve-2019-6974.c
+Converting
+Type-checking 22-tcve-2019-6974
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared vm_fd: 2R/2W
+Shared target_fd: 4R/2W
+Shared main::1::t0!0@1: 2R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared thread_0::1::dev!1@1[[0]]: 1R/3W
+Shared thread_0::1::dev!1@1[[1]]: 1R/2W
+Shared thread_0::1::dev!1@1[[2]]: 1R/2W
+Shared thread_0::1::dev!1@1[[3]]: 1R/2W
+Shared thread_0::1::dev!1@1[[4]]: 1R/2W
+Shared thread_0::1::dev!1@1[[5]]: 1R/2W
+Shared thread_0::1::dev!1@1[[6]]: 1R/2W
+Shared thread_0::1::dev!1@1[[7]]: 1R/2W
+Shared thread_0::1::dev!1@1[[8]]: 1R/2W
+Shared thread_0::1::dev!1@1[[9]]: 1R/2W
+size of program expression: 1351 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 22-tcve-2019-6974.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 22-tcve-2019-6974.c
+Converting
+Type-checking 22-tcve-2019-6974
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared vm_fd: 2R/2W
+Shared target_fd: 4R/2W
+Shared main::1::t0!0@1: 2R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared thread_0::1::dev!1@1[[0]]: 1R/3W
+Shared thread_0::1::dev!1@1[[1]]: 1R/2W
+Shared thread_0::1::dev!1@1[[2]]: 1R/2W
+Shared thread_0::1::dev!1@1[[3]]: 1R/2W
+Shared thread_0::1::dev!1@1[[4]]: 1R/2W
+Shared thread_0::1::dev!1@1[[5]]: 1R/2W
+Shared thread_0::1::dev!1@1[[6]]: 1R/2W
+Shared thread_0::1::dev!1@1[[7]]: 1R/2W
+Shared thread_0::1::dev!1@1[[8]]: 1R/2W
+Shared thread_0::1::dev!1@1[[9]]: 1R/2W
+size of program expression: 920 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 23-watchqueue.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 23-watchqueue.c
+Converting
+Type-checking 23-watchqueue
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared key_id: 3R/2W
+Shared pipe_fds[[0]]: 5R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 696 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 23-watchqueue.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 23-watchqueue.c
+Converting
+Type-checking 23-watchqueue
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared key_id: 3R/2W
+Shared pipe_fds[[0]]: 5R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 510 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 24-xsk.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 24-xsk.c
+Converting
+Type-checking 24-xsk
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared sock_fd: 7R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 616 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 24-xsk.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 24-xsk.c
+Converting
+Type-checking 24-xsk
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared sock_fd: 7R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 498 steps
+no slicing due to threads
+Generated 0 VCC(s), 0 remaining after simplification
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+

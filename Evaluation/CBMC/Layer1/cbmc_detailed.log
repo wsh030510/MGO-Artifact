@@ -1,0 +1,2265 @@
+CBMC Detailed Log
+Start Time: 2026年 04月 27日 星期一 22:13:50 HKT
+------------------------------------------------
+>>> Testing: 1-Linuxeasy.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 1-Linuxeasy.c
+Converting
+Type-checking 1-Linuxeasy
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 1 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 1-Linuxeasy.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 1-Linuxeasy.c
+Converting
+Type-checking 1-Linuxeasy
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 1 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 2-DPDK.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 2-DPDK.c
+Converting
+Type-checking 2-DPDK
+file 2-DPDK.c line 25 function rte_mcslock_unlock: warning: conversion from 'rte_mcslock_t **' to 'rte_mcslock_t *': incompatible pointer types
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 1 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 2-DPDK.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 2-DPDK.c
+Converting
+Type-checking 2-DPDK
+file 2-DPDK.c line 25 function rte_mcslock_unlock: warning: conversion from 'rte_mcslock_t **' to 'rte_mcslock_t *': incompatible pointer types
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 1 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 3-sel4-dynamic.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 3-sel4-dynamic.c
+Converting
+Type-checking 3-sel4-dynamic
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 1 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 2R/3W
+Shared __CPROVER_next_thread_id: 1R/3W
+Shared cs: 6R/5W
+Shared dummy_node..locked: 1R/1W
+Shared global_lock..tail: 2R/4W
+Shared thread_func::1::node!1@1..locked: 2R/3W
+Shared thread_func::1::node!2@1..locked: 1R/3W
+size of program expression: 891 steps
+no slicing due to threads
+Generated 2 VCC(s), 2 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+13649 variables, 52895 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0779256s
+
+** Results:
+3-sel4-dynamic.c function thread_func
+[thread_func.assertion.1] line 36 assertion cs == 1: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 3-sel4-dynamic.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 3-sel4-dynamic.c
+Converting
+Type-checking 3-sel4-dynamic
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 1 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 2R/3W
+Shared __CPROVER_next_thread_id: 1R/3W
+Shared cs: 6R/5W
+Shared dummy_node..locked: 1R/1W
+Shared global_lock..tail: 2R/4W
+Shared thread_func::1::node!1@1..locked: 2R/3W
+Shared thread_func::1::node!2@1..locked: 1R/3W
+size of program expression: 694 steps
+no slicing due to threads
+Generated 2 VCC(s), 2 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+10891 variables, 39507 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0484418s
+
+** Results:
+3-sel4-dynamic.c function thread_func
+[thread_func.assertion.1] line 36 assertion cs == 1: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 4-MySQL.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 4-MySQL.c
+Converting
+Type-checking 4-MySQL
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 2R/3W
+Shared __CPROVER_next_thread_id: 1R/3W
+Shared writer_thread: 1R/2W
+Shared recursive: 1R/2W
+size of program expression: 410 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+5012 variables, 17932 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0289011s
+
+** Results:
+4-MySQL.c function thread_reader
+[thread_reader.assertion.1] line 17 assertion recursive == 1: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 4-MySQL.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 4-MySQL.c
+Converting
+Type-checking 4-MySQL
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 2R/3W
+Shared __CPROVER_next_thread_id: 1R/3W
+Shared writer_thread: 1R/2W
+Shared recursive: 1R/2W
+size of program expression: 272 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+3356 variables, 10066 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0109102s
+
+** Results:
+4-MySQL.c function thread_reader
+[thread_reader.assertion.1] line 17 assertion recursive == 1: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 5-StackOverFlowEasy.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 5-StackOverFlowEasy.c
+Converting
+Type-checking 5-StackOverFlowEasy
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 5-StackOverFlowEasy.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 5-StackOverFlowEasy.c
+Converting
+Type-checking 5-StackOverFlowEasy
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 6-ompi.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 6-ompi.c
+Converting
+Type-checking 6-ompi
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 2R/3W
+Shared __CPROVER_next_thread_id: 1R/3W
+Shared active: 1R/3W
+Shared status: 1R/2W
+size of program expression: 395 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+4827 variables, 17144 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0193956s
+
+** Results:
+6-ompi.c function thread_wait
+[thread_wait.assertion.1] line 11 assertion status == 0: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 6-ompi.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 6-ompi.c
+Converting
+Type-checking 6-ompi
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 2R/3W
+Shared __CPROVER_next_thread_id: 1R/3W
+Shared active: 1R/3W
+Shared status: 1R/2W
+size of program expression: 275 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+3387 variables, 10305 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0121838s
+
+** Results:
+6-ompi.c function thread_wait
+[thread_wait.assertion.1] line 11 assertion status == 0: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 7-OpenBLAS.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 7-OpenBLAS.c
+Converting
+Type-checking 7-OpenBLAS
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 2R/3W
+Shared __CPROVER_next_thread_id: 1R/3W
+Shared memory_flag: 1R/2W
+Shared memory_buffer[[0]]: 1R/2W
+size of program expression: 387 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+4653 variables, 16328 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0183321s
+
+** Results:
+7-OpenBLAS.c function thread_use
+[thread_use.assertion.1] line 16 assertion memory_buffer[0] == 42: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 7-OpenBLAS.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 7-OpenBLAS.c
+Converting
+Type-checking 7-OpenBLAS
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 2R/3W
+Shared __CPROVER_next_thread_id: 1R/3W
+Shared memory_flag: 1R/2W
+Shared memory_buffer[[0]]: 1R/2W
+size of program expression: 268 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+3225 variables, 9545 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0111367s
+
+** Results:
+7-OpenBLAS.c function thread_use
+[thread_use.assertion.1] line 16 assertion memory_buffer[0] == 42: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 8-CVE-2020-11739-Xen.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 8-CVE-2020-11739-Xen.c
+Converting
+Type-checking 8-CVE-2020-11739-Xen
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 1 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 2R/3W
+Shared __CPROVER_next_thread_id: 1R/3W
+Shared cnts: 2R/5W
+Shared cs: 6R/5W
+Shared __sync_bool_compare_and_swap_S32::p_1!1@1: 1R/2W
+Shared __sync_bool_compare_and_swap_S32::p_2!1@1: 1R/2W
+Shared __sync_bool_compare_and_swap_S32::p_1!2@1: 1R/2W
+Shared __sync_bool_compare_and_swap_S32::p_2!2@1: 1R/2W
+size of program expression: 963 steps
+no slicing due to threads
+Generated 2 VCC(s), 2 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+13792 variables, 54542 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.158937s
+
+** Results:
+8-CVE-2020-11739-Xen.c function thread_func
+[thread_func.assertion.1] line 18 assertion cs == 1: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 8-CVE-2020-11739-Xen.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 8-CVE-2020-11739-Xen.c
+Converting
+Type-checking 8-CVE-2020-11739-Xen
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 1 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 2R/3W
+Shared __CPROVER_next_thread_id: 1R/3W
+Shared cnts: 2R/5W
+Shared cs: 6R/5W
+Shared __sync_bool_compare_and_swap_S32::p_1!1@1: 1R/2W
+Shared __sync_bool_compare_and_swap_S32::p_2!1@1: 1R/2W
+Shared __sync_bool_compare_and_swap_S32::p_1!2@1: 1R/2W
+Shared __sync_bool_compare_and_swap_S32::p_2!2@1: 1R/2W
+size of program expression: 828 steps
+no slicing due to threads
+Generated 2 VCC(s), 2 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+11902 variables, 45370 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0584668s
+
+** Results:
+8-CVE-2020-11739-Xen.c function thread_func
+[thread_func.assertion.1] line 18 assertion cs == 1: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 9-CVE-2020-25603-Xen.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 9-CVE-2020-25603-Xen.c
+Converting
+Type-checking 9-CVE-2020-25603-Xen
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 2R/3W
+Shared __CPROVER_next_thread_id: 1R/3W
+Shared evtchn: 1R/2W
+Shared valid_evtchns: 1R/2W
+size of program expression: 382 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+4653 variables, 16328 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.022017s
+
+** Results:
+9-CVE-2020-25603-Xen.c function thread_access
+[thread_access.assertion.1] line 15 assertion evtchn == 1: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 9-CVE-2020-25603-Xen.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 9-CVE-2020-25603-Xen.c
+Converting
+Type-checking 9-CVE-2020-25603-Xen
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 2R/3W
+Shared __CPROVER_next_thread_id: 1R/3W
+Shared evtchn: 1R/2W
+Shared valid_evtchns: 1R/2W
+size of program expression: 262 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+3213 variables, 9488 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0105031s
+
+** Results:
+9-CVE-2020-25603-Xen.c function thread_access
+[thread_access.assertion.1] line 15 assertion evtchn == 1: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 10-ceph.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 10-ceph.c
+Converting
+Type-checking 10-ceph
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 2R/3W
+Shared __CPROVER_next_thread_id: 1R/3W
+Shared nlock: 1R/2W
+Shared locked_by: 1R/2W
+size of program expression: 386 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+4685 variables, 16425 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0190473s
+
+** Results:
+10-ceph.c function check_thread
+[check_thread.assertion.1] line 16 assertion locked_by == 1: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 10-ceph.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 10-ceph.c
+Converting
+Type-checking 10-ceph
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 2R/3W
+Shared __CPROVER_next_thread_id: 1R/3W
+Shared nlock: 1R/2W
+Shared locked_by: 1R/2W
+size of program expression: 267 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+3257 variables, 9642 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0116413s
+
+** Results:
+10-ceph.c function check_thread
+[check_thread.assertion.1] line 16 assertion locked_by == 1: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 11-MariaDBEasy.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 11-MariaDBEasy.c
+Converting
+Type-checking 11-MariaDBEasy
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared node_key: 1R/2W
+Shared node_link: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 525 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+8573 variables, 32205 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.049105s
+
+** Results:
+11-MariaDBEasy.c function thread_find
+[thread_find.assertion.1] line 18 assertion k == 1: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 11-MariaDBEasy.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 11-MariaDBEasy.c
+Converting
+Type-checking 11-MariaDBEasy
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared node_key: 1R/2W
+Shared node_link: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 405 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+6893 variables, 24045 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0412536s
+
+** Results:
+11-MariaDBEasy.c function thread_find
+[thread_find.assertion.1] line 18 assertion k == 1: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 12-DragonWell8Easy.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 12-DragonWell8Easy.c
+Converting
+Type-checking 12-DragonWell8Easy
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 12-DragonWell8Easy.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 12-DragonWell8Easy.c
+Converting
+Type-checking 12-DragonWell8Easy
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 13-JDK.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 13-JDK.c
+Converting
+Type-checking 13-JDK
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared semaphore: 1R/2W
+Shared w_state: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 518 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+8478 variables, 32114 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0473295s
+
+** Results:
+13-JDK.c function thread_enter
+[thread_enter.assertion.1] line 9 assertion w_state == 1: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 13-JDK.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 13-JDK.c
+Converting
+Type-checking 13-JDK
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared semaphore: 1R/2W
+Shared w_state: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 398 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+6798 variables, 23954 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0259709s
+
+** Results:
+13-JDK.c function thread_enter
+[thread_enter.assertion.1] line 9 assertion w_state == 1: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 14-libfabric.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 14-libfabric.c
+Converting
+Type-checking 14-libfabric
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared cmd_data: 1R/2W
+Shared resp_status: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 524 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+8477 variables, 32109 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0388037s
+
+** Results:
+14-libfabric.c function thread_check
+[thread_check.assertion.1] line 16 assertion cmd_data == 2: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 14-libfabric.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 14-libfabric.c
+Converting
+Type-checking 14-libfabric
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared cmd_data: 1R/2W
+Shared resp_status: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 405 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+6811 variables, 24017 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0343289s
+
+** Results:
+14-libfabric.c function thread_check
+[thread_check.assertion.1] line 16 assertion cmd_data == 2: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 15-openmpi.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 15-openmpi.c
+Converting
+Type-checking 15-openmpi
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared list_data: 1R/2W
+Shared head_ptr: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 520 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+8477 variables, 32109 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0487999s
+
+** Results:
+15-openmpi.c function thread_pop
+[thread_pop.assertion.1] line 15 assertion list_data == 42: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 15-openmpi.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 15-openmpi.c
+Converting
+Type-checking 15-openmpi
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared list_data: 1R/2W
+Shared head_ptr: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 400 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+6797 variables, 23949 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0317545s
+
+** Results:
+15-openmpi.c function thread_pop
+[thread_pop.assertion.1] line 15 assertion list_data == 42: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 16-includeos.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 16-includeos.c
+file 16-includeos.c line 9 function thread_produce: syntax error before '/'
+PARSING ERROR
+
+------------------------------------------------
+
+>>> Testing: 16-includeos.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 16-includeos.c
+file 16-includeos.c line 9 function thread_produce: syntax error before '/'
+PARSING ERROR
+
+------------------------------------------------
+
+>>> Testing: 17-mysql.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 17-mysql.c
+Converting
+Type-checking 17-mysql
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared data: 1R/2W
+Shared lock_released: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 520 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+8477 variables, 32109 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0452485s
+
+** Results:
+17-mysql.c function thread_enter_lock
+[thread_enter_lock.assertion.1] line 15 assertion data == 1: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 17-mysql.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 17-mysql.c
+Converting
+Type-checking 17-mysql
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared data: 1R/2W
+Shared lock_released: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 400 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+6797 variables, 23949 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0308246s
+
+** Results:
+17-mysql.c function thread_enter_lock
+[thread_enter_lock.assertion.1] line 15 assertion data == 1: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 18-JDK-8179954.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 18-JDK-8179954.c
+Converting
+Type-checking 18-JDK-8179954
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared x: 1R/2W
+Shared y: 1R/2W
+Shared r1: 1R/2W
+Shared r2: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 606 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+9931 variables, 38537 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0435919s
+
+** Results:
+18-JDK-8179954.c function main
+[main.assertion.1] line 28 assertion !(r1 == 0 && r2 == 0): FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 18-JDK-8179954.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 18-JDK-8179954.c
+Converting
+Type-checking 18-JDK-8179954
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared x: 1R/2W
+Shared y: 1R/2W
+Shared r1: 1R/2W
+Shared r2: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 452 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+7775 variables, 28065 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0352872s
+
+** Results:
+18-JDK-8179954.c function main
+[main.assertion.1] line 28 assertion !(r1 == 0 && r2 == 0): FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 19-ompi.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 19-ompi.c
+Converting
+Type-checking 19-ompi
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared size: 1R/2W
+Shared tag: 1R/2W
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared global_hdr_ready: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 561 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+9130 variables, 35046 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0460317s
+
+** Results:
+19-ompi.c function reader_thread
+[reader_thread.assertion.1] line 18 assertion tag == 1 && size == 1024: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 19-ompi.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 19-ompi.c
+Converting
+Type-checking 19-ompi
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared size: 1R/2W
+Shared tag: 1R/2W
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared global_hdr_ready: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 423 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+7198 variables, 25662 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0304113s
+
+** Results:
+19-ompi.c function reader_thread
+[reader_thread.assertion.1] line 18 assertion tag == 1 && size == 1024: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 20-barrier.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 20-barrier.c
+Converting
+Type-checking 20-barrier
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared data: 1R/2W
+Shared flag: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 520 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+8477 variables, 32109 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0379284s
+
+** Results:
+20-barrier.c function reader_thread
+[reader_thread.assertion.1] line 15 assertion data == 42: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 20-barrier.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 20-barrier.c
+Converting
+Type-checking 20-barrier
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared data: 1R/2W
+Shared flag: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 400 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+6797 variables, 23949 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0290347s
+
+** Results:
+20-barrier.c function reader_thread
+[reader_thread.assertion.1] line 15 assertion data == 42: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 21-crossbeam.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 21-crossbeam.c
+Converting
+Type-checking 21-crossbeam
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared seq_state: 2R/2W
+Shared shared_data: 1R/2W
+Shared main::1::r!0@1: 2R/2W
+Shared main::1::w!0@1: 2R/2W
+size of program expression: 539 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+8823 variables, 33182 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0381257s
+
+** Results:
+21-crossbeam.c function reader
+[reader.assertion.1] line 13 assertion val == 0: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 21-crossbeam.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 21-crossbeam.c
+Converting
+Type-checking 21-crossbeam
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared seq_state: 2R/2W
+Shared shared_data: 1R/2W
+Shared main::1::r!0@1: 2R/2W
+Shared main::1::w!0@1: 2R/2W
+size of program expression: 419 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+7143 variables, 25022 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.029947s
+
+** Results:
+21-crossbeam.c function reader
+[reader.assertion.1] line 13 assertion val == 0: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 22-MariaDB.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 22-MariaDB.c
+Converting
+Type-checking 22-MariaDB
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared db_data: 1R/2W
+Shared db_flag: 1R/2W
+Shared main::1::w!0@1: 2R/2W
+Shared main::1::r!0@1: 2R/2W
+size of program expression: 529 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+8573 variables, 32205 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0451299s
+
+** Results:
+22-MariaDB.c function reader
+[reader.assertion.1] line 18 assertion d == 42: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 22-MariaDB.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 22-MariaDB.c
+Converting
+Type-checking 22-MariaDB
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared db_data: 1R/2W
+Shared db_flag: 1R/2W
+Shared main::1::w!0@1: 2R/2W
+Shared main::1::r!0@1: 2R/2W
+size of program expression: 410 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+6907 variables, 24113 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0269766s
+
+** Results:
+22-MariaDB.c function reader
+[reader.assertion.1] line 18 assertion d == 42: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 23-mcs.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 23-mcs.c
+Converting
+Type-checking 23-mcs
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared me_locked: 1R/2W
+Shared prev_next: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 520 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+8477 variables, 32109 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0400498s
+
+** Results:
+23-mcs.c function thread_predecessor_unlock
+[thread_predecessor_unlock.assertion.1] line 15 assertion me_locked == 1: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 23-mcs.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 23-mcs.c
+Converting
+Type-checking 23-mcs
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared me_locked: 1R/2W
+Shared prev_next: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 400 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+6797 variables, 23949 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0273347s
+
+** Results:
+23-mcs.c function thread_predecessor_unlock
+[thread_predecessor_unlock.assertion.1] line 15 assertion me_locked == 1: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 24-mysql_rwlock_deadlock.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 24-mysql_rwlock_deadlock.c
+Converting
+Type-checking 24-mysql_rwlock_deadlock
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared lock_recursive: 1R/2W
+Shared lock_writer_thread: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 525 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+8573 variables, 32205 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0381048s
+
+** Results:
+24-mysql_rwlock_deadlock.c function thread_reader
+[thread_reader.assertion.1] line 18 assertion r_writer == 1001: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 24-mysql_rwlock_deadlock.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 24-mysql_rwlock_deadlock.c
+Converting
+Type-checking 24-mysql_rwlock_deadlock
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared lock_recursive: 1R/2W
+Shared lock_writer_thread: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 405 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+6893 variables, 24045 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0281032s
+
+** Results:
+24-mysql_rwlock_deadlock.c function thread_reader
+[thread_reader.assertion.1] line 18 assertion r_writer == 1001: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 25-mysql_volatile_bug.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 25-mysql_volatile_bug.c
+Converting
+Type-checking 25-mysql_volatile_bug
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared log_state: 1R/2W
+Shared log_file_data: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 520 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+8477 variables, 32109 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0374883s
+
+** Results:
+25-mysql_volatile_bug.c function thread_use_binlog
+[thread_use_binlog.assertion.1] line 15 assertion log_file_data == 999: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 25-mysql_volatile_bug.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 25-mysql_volatile_bug.c
+Converting
+Type-checking 25-mysql_volatile_bug
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared log_state: 1R/2W
+Shared log_file_data: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 400 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+6797 variables, 23949 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0265084s
+
+** Results:
+25-mysql_volatile_bug.c function thread_use_binlog
+[thread_use_binlog.assertion.1] line 15 assertion log_file_data == 999: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 26-mysql-99556.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 26-mysql-99556.c
+Converting
+Type-checking 26-mysql-99556
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared gtid_mode: 1R/2W
+Shared gtid_mode_counter: 1R/2W
+Shared main::1::wt!0@1: 2R/2W
+Shared main::1::rt!0@1: 2R/2W
+size of program expression: 525 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+8573 variables, 32205 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0399614s
+
+** Results:
+26-mysql-99556.c function reader
+[reader.assertion.1] line 18 assertion mode == 1: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 26-mysql-99556.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 26-mysql-99556.c
+Converting
+Type-checking 26-mysql-99556
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared gtid_mode: 1R/2W
+Shared gtid_mode_counter: 1R/2W
+Shared main::1::wt!0@1: 2R/2W
+Shared main::1::rt!0@1: 2R/2W
+size of program expression: 405 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+6893 variables, 24045 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0296014s
+
+** Results:
+26-mysql-99556.c function reader
+[reader.assertion.1] line 18 assertion mode == 1: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 27-mysql-ut-realx.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 27-mysql-ut-realx.c
+Converting
+Type-checking 27-mysql-ut-realx
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared inno_data: 1R/2W
+Shared inno_data_ready: 1R/2W
+Shared main::1::tw!0@1: 2R/2W
+Shared main::1::tr!0@1: 2R/2W
+size of program expression: 520 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+8477 variables, 32109 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0394057s
+
+** Results:
+27-mysql-ut-realx.c function thread_reader
+[thread_reader.assertion.1] line 15 assertion inno_data == 1: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 27-mysql-ut-realx.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 27-mysql-ut-realx.c
+Converting
+Type-checking 27-mysql-ut-realx
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared inno_data: 1R/2W
+Shared inno_data_ready: 1R/2W
+Shared main::1::tw!0@1: 2R/2W
+Shared main::1::tr!0@1: 2R/2W
+size of program expression: 400 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+6797 variables, 23949 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0329388s
+
+** Results:
+27-mysql-ut-realx.c function thread_reader
+[thread_reader.assertion.1] line 15 assertion inno_data == 1: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 28-pso_test.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 28-pso_test.c
+Converting
+Type-checking 28-pso_test
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared pso_x: 1R/2W
+Shared pso_y: 1R/2W
+Shared pso_r1: 1R/2W
+Shared pso_r2: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 608 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+9959 variables, 38673 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0685798s
+
+** Results:
+28-pso_test.c function main
+[main.assertion.1] line 28 assertion !(pso_r1 == 1 && pso_r2 == 0): SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 28-pso_test.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 28-pso_test.c
+Converting
+Type-checking 28-pso_test
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared pso_x: 1R/2W
+Shared pso_y: 1R/2W
+Shared pso_r1: 1R/2W
+Shared pso_r2: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 454 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+7803 variables, 28201 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0366269s
+
+** Results:
+28-pso_test.c function main
+[main.assertion.1] line 28 assertion !(pso_r1 == 1 && pso_r2 == 0): FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 29-sofa_pbrpc_hang.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 29-sofa_pbrpc_hang.c
+Converting
+Type-checking 29-sofa_pbrpc_hang
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared pending_message_count: 1R/2W
+Shared send_token: 1R/2W
+Shared t1_token: 1R/2W
+Shared t2_count: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 606 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+9931 variables, 38537 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0456274s
+
+** Results:
+29-sofa_pbrpc_hang.c function main
+[main.assertion.1] line 29 assertion !(t1_token == 1 && t2_count == 0): FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 29-sofa_pbrpc_hang.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 29-sofa_pbrpc_hang.c
+Converting
+Type-checking 29-sofa_pbrpc_hang
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared pending_message_count: 1R/2W
+Shared send_token: 1R/2W
+Shared t1_token: 1R/2W
+Shared t2_count: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 452 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+7775 variables, 28065 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0342653s
+
+** Results:
+29-sofa_pbrpc_hang.c function main
+[main.assertion.1] line 29 assertion !(t1_token == 1 && t2_count == 0): FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 30-tso_test.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 30-tso_test.c
+Converting
+Type-checking 30-tso_test
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared tso_x: 1R/2W
+Shared tso_y: 1R/2W
+Shared tso_r1: 1R/2W
+Shared tso_r2: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 606 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+9931 variables, 38537 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0562297s
+
+** Results:
+30-tso_test.c function main
+[main.assertion.1] line 28 assertion !(tso_r1 == 0 && tso_r2 == 0): FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 30-tso_test.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 30-tso_test.c
+Converting
+Type-checking 30-tso_test
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared tso_x: 1R/2W
+Shared tso_y: 1R/2W
+Shared tso_r1: 1R/2W
+Shared tso_r2: 1R/2W
+Shared main::1::t1!0@1: 2R/2W
+Shared main::1::t2!0@1: 2R/2W
+size of program expression: 452 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+7775 variables, 28065 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0347511s
+
+** Results:
+30-tso_test.c function main
+[main.assertion.1] line 28 assertion !(tso_r1 == 0 && tso_r2 == 0): FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
+>>> Testing: 31-unsafe_publish.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 31-unsafe_publish.c
+Converting
+Type-checking 31-unsafe_publish
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 31-unsafe_publish.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 31-unsafe_publish.c
+Converting
+Type-checking 31-unsafe_publish
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+pointer handling for concurrency is unsound
+
+------------------------------------------------
+
+>>> Testing: 32-datarace.c (Model: TSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 32-datarace.c
+Converting
+Type-checking 32-datarace
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding TSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared data: 1R/2W
+Shared flag: 1R/2W
+Shared main::1::writer!0@1: 2R/2W
+Shared main::1::reader!0@1: 2R/2W
+size of program expression: 520 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+8477 variables, 32109 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime decision procedure: 0.0407903s
+
+** Results:
+32-datarace.c function reader_thread
+[reader_thread.assertion.1] line 15 assertion data == 42: SUCCESS
+
+** 0 of 1 failed (1 iterations)
+VERIFICATION SUCCESSFUL
+
+------------------------------------------------
+
+>>> Testing: 32-datarace.c (Model: PSO)
+CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Parsing 32-datarace.c
+Converting
+Type-checking 32-datarace
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+file <builtin-library-pthread_create> line 40 function __spawned_thread: replacing function pointer by 2 possible targets
+Generic Property Instrumentation
+Running with 8 object bits, 56 offset bits (default)
+Starting Bounded Model Checking
+Adding PSO constraints
+Shared __CPROVER_threads_exited: 4R/3W
+Shared __CPROVER_next_thread_id: 3R/3W
+Shared data: 1R/2W
+Shared flag: 1R/2W
+Shared main::1::writer!0@1: 2R/2W
+Shared main::1::reader!0@1: 2R/2W
+size of program expression: 400 steps
+no slicing due to threads
+Generated 1 VCC(s), 1 remaining after simplification
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+Post-processing
+Solving with MiniSAT 2.2.1 with simplifier
+6797 variables, 23949 clauses
+SAT checker: instance is SATISFIABLE
+Runtime decision procedure: 0.0324334s
+
+** Results:
+32-datarace.c function reader_thread
+[reader_thread.assertion.1] line 15 assertion data == 42: FAILURE
+
+** 1 of 1 failed (2 iterations)
+VERIFICATION FAILED
+
+------------------------------------------------
+
