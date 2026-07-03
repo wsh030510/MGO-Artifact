@@ -28,7 +28,7 @@ The artifact also includes automated evaluation pipelines for four verification 
 #### 2.1 Extract the Artifact
 
 ```bash
-tar -xzf MGO-dataset.tar.gz
+unzip MGO-dataset.zip
 cd Ordering-Related-Concurrency-Bugs-Dataset
 ```
 

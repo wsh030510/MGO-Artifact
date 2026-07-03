@@ -63,7 +63,7 @@ The artifact is available at:
 ### Accessing the Artifact
 
 1. Download the artifact from Zenodo (DOI to be provided).
-2. Extract the archive: `tar -xzf MGO-dataset.tar.gz`
+2. Extract the archive: `unzip MGO-dataset.zip`
 3. Enter the directory: `cd Ordering-Related-Concurrency-Bugs-Dataset`
 
 ### Tools Required
