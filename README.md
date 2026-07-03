@@ -28,8 +28,8 @@ The artifact also includes automated evaluation pipelines for four verification 
 #### 2.1 Extract the Artifact
 
 ```bash
-unzip MGO-dataset.zip
-cd Ordering-Related-Concurrency-Bugs-Dataset
+unzip MGO-Artifact-main.zip
+cd MGO-Artifact-main
 ```
 
 #### 2.2 Install Required Tools
@@ -269,7 +269,7 @@ GitHub Issues, CVE Database, etc.) under their respective open-source licenses.
 ### 6. Dataset Structure
 
 ```
-Ordering-Related-Concurrency-Bugs-Dataset/
+MGO-Artifact/
 ├── README.md              # This file (artifact documentation)
 ├── REQUIREMENTS           # Hardware/software requirements and tool versions
 ├── STATUS                 # Badge application and justification
