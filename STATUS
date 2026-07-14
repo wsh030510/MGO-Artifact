@@ -8,29 +8,41 @@ CC-BY-4.0 license. The artifact includes the complete MGO (Multi-Granularity Ord
 of 58 real-world ordering-related concurrency bugs, along with automated evaluation pipelines
 for four verification tools (CBMC, GenMC, Nidhugg, IRhunter).
 
+A pre-built Docker image containing all three primary tools (CBMC, GenMC, Nidhugg) is
+available on Docker Hub at `wangshaohao/mgo-ae:latest`, enabling reviewers to reproduce
+all results with a single `docker pull` command. No per-tool installation is required.
+
 === Justification for "Reusable" ===
 
 The artifact is carefully structured and documented to facilitate reuse and repurposing:
 
 1. Well-organized taxonomy: 58 bug samples are hierarchically categorized across three
-   abstraction layers (Micro-Instruction Level, Resource Lifecycle Level, Semantic Logic Level), with clear
-   labeling including bug ID, source provenance, target system, bug type, and dates.
+   abstraction layers (Micro-Instruction Level, Resource Lifecycle Level, Semantic Logic Level),
+   with clear labeling including bug ID, source provenance, target system, bug type, and dates.
 
-2. Automated evaluation scripts: Each tool directory (CBMC, GENMC&Nidhugg, IRhunter)
-   includes ready-to-run shell scripts that batch-execute experiments and produce
-   structured CSV summary reports. Reviewers can reproduce all paper claims with
-   minimal manual effort.
+2. Pre-built Docker image on Docker Hub: Reviewers can pull the complete toolchain via
+   `docker pull wangshaohao/mgo-ae:latest`. The image includes CBMC 5.12, GenMC v0.9,
+   and Nidhugg 0.4, all compiled and configured for immediate use. A Dockerfile and
+   full source code (genmc-src/, nidhugg-src/) are also included for building from source.
 
-3. Verified results: Pre-computed CSV summary reports are included for cross-validation,
-   allowing reviewers to confirm that their runs match the paper's reported findings.
+3. Automated evaluation scripts: Each tool directory includes ready-to-run shell scripts
+   that batch-execute experiments and produce structured CSV summary reports. All scripts
+   run inside the Docker container for consistent, reproducible results.
 
-4. Containerized environment: IRhunter dependencies are encapsulated via Docker images,
-   eliminating installation friction. The Docker configurations are fully documented.
+4. Verified results: Pre-computed CSV summary reports are included for cross-validation.
+   All results have been verified to be consistent between the host environment,
+   the locally-built Docker image, and the Docker Hub image, ensuring that reviewers
+   can reproduce the findings regardless of their setup.
 
-5. Extensibility: The dataset is tool-agnostic. New verification tools can be applied to
+5. Containerized environment: All three primary tools (CBMC, GenMC, Nidhugg) run inside
+   a single Docker image, eliminating installation friction. IRhunter uses a separate
+   Docker image (4ndychin/llvm-ufo) provided by its authors for the UFO instrumentation
+   engine.
+
+6. Extensibility: The dataset is tool-agnostic. New verification tools can be applied to
    the same bug samples by following the documented evaluation pattern. The three-layer
    taxonomy provides a clear framework for comparative studies.
 
-6. Detailed documentation: Step-by-step reproduction instructions are provided for each
+7. Detailed documentation: Step-by-step reproduction instructions are provided for each
    tool, including expected outputs, interpretation guidelines for CSV reports, and
-   troubleshooting notes for known edge cases (e.g., CBMC pointer-handling limitations).
+   troubleshooting notes for known edge cases.

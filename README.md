@@ -28,58 +28,60 @@ The artifact also includes automated evaluation pipelines for four verification 
 #### 2.1 Extract the Artifact
 
 ```bash
-unzip MGO-Artifact-main.zip
-cd MGO-Artifact-main
+tar -xzf MGO-dataset.tar.gz
+cd Ordering-Related-Concurrency-Bugs-Dataset
 ```
 
-#### 2.2 Install Required Tools
+#### 2.2 Docker Image (CBMC, GenMC, Nidhugg)
 
-The following tools must be available on your system:
+The recommended way to run CBMC, GenMC, and Nidhugg is via Docker.
+The pre-built Docker image is available on Docker Hub.
 
-**CBMC (v5.12):**
+**Option A: Pull from Docker Hub (recommended)**
+
 ```bash
-sudo apt install cbmc
-# Verify: cbmc --version
+docker pull wangshaohao/mgo-ae:latest
 ```
 
-**GenMC (v0.9):**
+**Option B: Build from source (if Docker Hub is unavailable)**
+
 ```bash
-git clone https://github.com/MPI-SWS/genmc.git
-cd genmc && mkdir build && cd build
-cmake .. && make -j$(nproc)
-export PATH=$(pwd):$PATH
-# Verify: genmc --version
+docker build -t mgo-ae .
 ```
 
-**Nidhugg (v0.4):**
+The build takes 10-20 minutes.
+
+**Prerequisites:** Docker 20.10+ on x86_64 Linux.
+
+The image (~830 MB) contains:
+- **CBMC 5.12** — installed via Debian package
+- **GenMC v0.9** — compiled from source with LLVM 11
+- **Nidhugg 0.4** — compiled from source with LLVM 11
+- All 58 benchmark files and evaluation scripts under `/benchmarks/`
+
+Verify:
+
 ```bash
-sudo apt install nidhugg
-# Verify: nidhugg --version
+docker run --rm wangshaohao/mgo-ae:latest
+# Or if built from source: docker run --rm mgo-ae
 ```
 
-**Clang 11.0.1 (for generating LLVM IR):**
-```bash
-sudo apt install clang-11
-# Verify: clang --version
-```
+Expected output: version information for all three tools plus benchmark listing.
 
-**IRhunter (Docker-based):**
+#### 2.3 IRhunter (Separate Docker Setup)
 
-IRhunter consists of two components:
-1. **UFO** (dynamic instrumentation engine) — runs inside Docker
-2. **reorder-main** (reordering prediction engine) — Maven-based Java project, included under `Evaluation/IRhunter/`
+IRhunter requires a pre-built Docker image (`4ndychin/llvm-ufo`) and Maven.
+It is NOT included in the `mgo-ae` image.
 
 ```bash
-# Step 1: Pull the UFO Docker image (~5 GB)
+# Pull the UFO Docker image (~5 GB)
 docker pull 4ndychin/llvm-ufo
 
-# Step 2: Start a container from the image
+# Start a container
 docker run -d --name irhunter-ufo 4ndychin/llvm-ufo tail -f /dev/null
-
-# Step 3: Set the container ID for scripts to use
 export IRHUNTER_CONTAINER_ID=$(docker ps -q --filter name=irhunter-ufo)
 
-# Step 4: Build the reorder-main Maven project
+# Build the reorder-main Maven project
 cd Evaluation/IRhunter
 mvn compile
 ```
@@ -95,24 +97,20 @@ echo "Layer1: $(ls Layer1/*.c 2>/dev/null | wc -l) files (expected: 32)"
 echo "Layer2: $(ls Layer2/*.c 2>/dev/null | wc -l) files (expected: 24)"
 echo "Layer3: $(ls Layer3/*.c 2>/dev/null | wc -l) files (expected: 2)"
 
-# 2. Verify CBMC works
-echo "=== CBMC Smoke Test ==="
-cbmc --version
+# 2. Verify Docker image and tools
+docker run --rm mgo-ae
 
-# 3. Verify GenMC works
-echo "=== GenMC Smoke Test ==="
-genmc --version
+# 3. Quick tool verification with a sample benchmark
+docker run --rm mgo-ae bash -c "
+  echo '=== CBMC ===' && cbmc --version &&
+  echo '=== GenMC ===' && genmc --version &&
+  echo '=== Nidhugg ===' && nidhugg --version
+"
 
-# 4. Verify Nidhugg works
-echo "=== Nidhugg Smoke Test ==="
-nidhugg --version
-
-# 5. Verify evaluation scripts are executable
-echo "=== Script Check ==="
+# 4. Verify evaluation scripts are executable
 ls Evaluation/CBMC/Layer1/run_cbmc.sh
 ls Evaluation/GENMC\&Nidhugg/run_nidhugg.sh
-ls Evaluation/GENMC\&Nidhugg/Layer3/run_genmc_eval.sh
-ls Evaluation/IRhunter/loop_irhunter.sh
+ls Evaluation/GENMC\&Nidhugg/Layer1/run_genmc_eval.sh
 ```
 
 **Expected output:** All file counts match, all tools print version information,
@@ -120,16 +118,177 @@ and all script paths exist.
 
 ---
 
-## Part B: Step-by-Step Reproduction Instructions
+## Part B: Review Workflow
+
+### Quick Start for Reviewers
+
+*Estimated time: ~10 minutes (pull + evaluations). No manual tool installation required.*
+
+---
+
+#### Step 1: Pull the Docker Image
+
+The CBMC, GenMC, and Nidhugg tools are pre-built into a single Docker image
+hosted on Docker Hub:
+
+```bash
+docker pull wangshaohao/mgo-ae:latest
+```
+
+*If Docker Hub is inaccessible in your region, build the image from source instead:*
+```bash
+cd Ordering-Related-Concurrency-Bugs-Dataset
+docker build -t mgo-ae .
+```
+*Then replace `wangshaohao/mgo-ae:latest` with `mgo-ae` in all commands below.*
+
+**Verify the image is working:**
+
+```bash
+docker run --rm wangshaohao/mgo-ae:latest
+```
+
+Expected output: version banners for CBMC 5.12, GenMC v0.9, Nidhugg 0.4,
+and a listing of benchmark directories inside the container.
+
+---
+
+#### Step 2: Reproduce CBMC Results
+
+CBMC performs bounded model checking under TSO and PSO memory models.
+Each test case is classified by comparing results across the two models.
+
+**Run Layer 1 (32 cases):**
+```bash
+docker run --rm wangshaohao/mgo-ae:latest \
+  bash -c "cd /benchmarks/CBMC/Layer1 && bash run_cbmc.sh"
+```
+
+**Run Layer 2 (24 cases):**
+```bash
+docker run --rm wangshaohao/mgo-ae:latest \
+  bash -c "cd /benchmarks/CBMC/Layer2 && bash run_cbmc.sh"
+```
+
+**Run Layer 3 (2 cases):**
+```bash
+docker run --rm wangshaohao/mgo-ae:latest \
+  bash -c "cd /benchmarks/CBMC/Layer3 && bash run_cbmc.sh"
+```
+
+Each run produces `cbmc_summary_report.csv` containing:
+`File_Name, TSO_Result, PSO_Result, Conclusion`.
+
+**Interpretation:**
+- `WMM Bug` — TSO=Safe, PSO=Bug Detected → weak-memory-specific bug
+- `Logic Bug` — both models detect a bug → plain concurrency bug
+- `No Bug` — both models report Safe
+- `Error/Timeout` — unsupported features (e.g., pointer-heavy code)
+
+---
+
+#### Step 3: Reproduce Nidhugg Results
+
+Nidhugg performs stateless model checking under SC and PSO memory models
+using pre-compiled LLVM IR (`.ll`) files.
+
+```bash
+docker run --rm wangshaohao/mgo-ae:latest \
+  bash -c "cd /benchmarks/GENMC\&Nidhugg && bash run_nidhugg.sh"
+```
+
+**Output:** `nidhugg_summary_report.csv` with `Folder, File_Name, SC_Model_Result, PSO_Model_Result`.
+
+**Interpretation:** A WMM-specific bug is detected when SC=Safe and PSO=Bug Detected.
+
+*Note: If the pre-compiled `.ll` files are incompatible with the Docker environment,
+regenerate them first:*
+```bash
+docker run --rm wangshaohao/mgo-ae:latest \
+  bash -c "cd /benchmarks/GENMC\&Nidhugg && bash generate_ll.sh"
+```
+
+---
+
+#### Step 4: Reproduce GenMC Results
+
+GenMC performs verification under Relaxed (C11 `memory_order_relaxed`) and SC models.
+
+**Layer 1 (32 cases):**
+```bash
+docker run --rm wangshaohao/mgo-ae:latest \
+  bash -c "cd /benchmarks/GENMC\&Nidhugg/Layer1 && bash run_genmc_eval.sh"
+```
+
+**Layer 2 (24 cases):**
+```bash
+docker run --rm wangshaohao/mgo-ae:latest \
+  bash -c "cd /benchmarks/GENMC\&Nidhugg/Layer2 && bash run_genmc_eval.sh"
+```
+
+**Layer 3 (4 cases):**
+```bash
+docker run --rm wangshaohao/mgo-ae:latest \
+  bash -c "cd /benchmarks/GENMC\&Nidhugg/Layer3 && bash run_genmc_eval.sh"
+```
+
+**Output:** `genmc_evaluation_report.csv` with `Bug_ID, File_Name, Relaxed_Result, SC_Result, Conclusion`.
+
+**Interpretation:**
+- `Confirmed WMM Bug` — Relaxed=FAILED, SC=SUCCESS → WMM-specific
+- `Logic Bug` — both models fail → plain concurrency bug
+- `False Negative` — both models pass
+
+---
+
+#### Step 5: (Optional) Reproduce IRhunter Results
+
+IRhunter uses a separate Docker image provided by its authors. Pre-computed
+results for 18 bugs are available in `Evaluation/IRhunter/`.
+
+**Setup:**
+```bash
+docker pull 4ndychin/llvm-ufo
+docker run -d --name irhunter-ufo 4ndychin/llvm-ufo tail -f /dev/null
+export IRHUNTER_CONTAINER_ID=$(docker ps -q --filter name=irhunter-ufo)
+cd Evaluation/IRhunter && mvn compile
+```
+
+**Run a single test:**
+```bash
+bash loop_irhunter.sh ../../Layer1/21-crossbeam.c
+```
+
+The `loop_irhunter.sh` script automates the two-stage pipeline (UFO dynamic
+instrumentation + reorder-main constraint analysis) with up to 10 retry
+attempts, since concurrency bugs may not manifest on every execution.
+
+---
+
+#### Step 6: Verify Results
+
+Compare the CSV outputs from each evaluation with the pre-computed results
+included in the `Evaluation/` directory:
+
+```bash
+# Example for CBMC Layer 1
+diff <(cat Evaluation/CBMC/Layer1/cbmc_summary_report.csv) \
+     <(docker run --rm wangshaohao/mgo-ae:latest \
+       cat /benchmarks/CBMC/Layer1/cbmc_summary_report.csv)
+```
+
+Reviewers can confirm this by running any of the above commands and comparing the output.
+
+---
 
 ### Overview of Paper Claims Supported by This Artifact
 
 | Claim | Supported? | How to Verify |
 |-------|------------|---------------|
 | MGO taxonomy classifies 58 real-world ordering-related concurrency bugs into 3 layers | Yes | Inspect files in Layer1/, Layer2/, Layer3/ |
-| CBMC can detect WMM-specific bugs (TSO vs PSO differential analysis) | Yes | Run CBMC evaluation and check CSV reports |
-| GenMC can detect WMM-specific bugs (Relaxed vs SC differential analysis) | Yes | Run GenMC evaluation and check CSV reports |
-| Nidhugg can detect WMM-specific bugs (SC vs PSO differential analysis) | Yes | Run Nidhugg evaluation and check CSV reports |
+| CBMC can detect WMM-specific bugs (TSO vs PSO differential analysis) | Yes | Run CBMC evaluation via Docker and check CSV reports |
+| GenMC can detect WMM-specific bugs (Relaxed vs SC differential analysis) | Yes | Run GenMC evaluation via Docker and check CSV reports |
+| Nidhugg can detect WMM-specific bugs (SC vs PSO differential analysis) | Yes | Run Nidhugg evaluation via Docker and check CSV reports |
 | IRhunter can predictively detect instruction reordering vulnerabilities | Yes | Run IRhunter on individual bug samples |
 | Bug provenance and real-world impact | Yes | See DATASET.md for source links and dates |
 
@@ -150,8 +309,7 @@ verification failure under PSO (weaker model, allowing Store-Load reordering).
 
 **Run:**
 ```bash
-cd Evaluation/CBMC/Layer1
-bash run_cbmc.sh
+docker run --rm mgo-ae bash -c "cd /benchmarks/CBMC/Layer1 && bash run_cbmc.sh"
 ```
 
 **Expected output:**
@@ -167,8 +325,8 @@ bash run_cbmc.sh
 
 **Repeat for Layer2 and Layer3:**
 ```bash
-cd Evaluation/CBMC/Layer2 && bash run_cbmc.sh
-cd Evaluation/CBMC/Layer3 && bash run_cbmc.sh
+docker run --rm mgo-ae bash -c "cd /benchmarks/CBMC/Layer2 && bash run_cbmc.sh"
+docker run --rm mgo-ae bash -c "cd /benchmarks/CBMC/Layer3 && bash run_cbmc.sh"
 ```
 
 ### 2. Reproducing Nidhugg Results
@@ -178,14 +336,12 @@ LLVM IR (.ll files) as input.
 
 **Step 1: Regenerate LLVM IR files (if needed):**
 ```bash
-cd Evaluation/GENMC\&Nidhugg
-bash generate_ll.sh
+docker run --rm mgo-ae bash -c "cd /benchmarks/GENMC\&Nidhugg && bash generate_ll.sh"
 ```
 
 **Step 2: Run Nidhugg evaluation:**
 ```bash
-cd Evaluation/GENMC\&Nidhugg
-bash run_nidhugg.sh
+docker run --rm mgo-ae bash -c "cd /benchmarks/GENMC\&Nidhugg && bash run_nidhugg.sh"
 ```
 
 **Expected output:**
@@ -200,14 +356,23 @@ bash run_nidhugg.sh
 
 GenMC performs verification under Relaxed (C11 memory_order_relaxed) and SC models.
 
-**Run:**
+**Run Layer1:**
 ```bash
-cd Evaluation/GENMC\&Nidhugg/Layer3
-bash run_genmc_eval.sh
+docker run --rm mgo-ae bash -c "cd /benchmarks/GENMC\&Nidhugg/Layer1 && bash run_genmc_eval.sh"
+```
+
+**Run Layer2:**
+```bash
+docker run --rm mgo-ae bash -c "cd /benchmarks/GENMC\&Nidhugg/Layer2 && bash run_genmc_eval.sh"
+```
+
+**Run Layer3:**
+```bash
+docker run --rm mgo-ae bash -c "cd /benchmarks/GENMC\&Nidhugg/Layer3 && bash run_genmc_eval.sh"
 ```
 
 **Expected output:**
-- `genmc_evaluation_report2.csv`: Bug_ID, File_Name, Relaxed_Result, SC_Result, Conclusion
+- `genmc_evaluation_report.csv`: Bug_ID, File_Name, Relaxed_Result, SC_Result, Conclusion
 
 **Interpretation:**
 - `Confirmed WMM Bug`: Relaxed=FAILED, SC=SUCCESS → WMM-specific
@@ -216,45 +381,142 @@ bash run_genmc_eval.sh
 
 ### 4. Reproducing IRhunter Results
 
-IRhunter performs predictive reordering detection in two stages:
+IRhunter is a predictive reordering detection tool originally developed by its
+authors. It consists of two components:
 
-**Stage 1 — Dynamic instrumentation (UFO in Docker):**
-The `dynamic_run.sh` script copies a C source file into the UFO Docker container,
-compiles it with a modified ThreadSanitizer-enabled clang, runs the binary with
-UFO instrumentation enabled (`UFO_ON=1`), and collects execution traces to `./log/`.
+1. **UFO** — A modified LLVM/Clang 7.0 toolchain with ThreadSanitizer extensions
+   for dynamic instrumentation. The authors distribute this as a Docker image.
+2. **reorder-main** — A Java/Maven constraint-based reordering analysis engine
+   that reads execution traces and predicts reordering vulnerabilities.
 
-**Stage 2 — Reordering prediction (reorder-main on host):**
-The reorder-main Maven project reads the collected traces, runs a constraint-based
-reordering analysis, and outputs predicted reordering vulnerabilities in SMT-LIB format.
+This artifact uses the UFO Docker image provided by the IRhunter authors,
+combined with the reorder-main analysis engine included under `Evaluation/IRhunter/`.
 
-**Full workflow:**
+#### 4.1 IRhunter Architecture
+
+```
+                               ┌─────────────────────────┐
+                               │   UFO Docker Container   │
+  Source File (.c)  ── ─►   │   (4ndychin/llvm-ufo)   │
+                               │                          │
+                               │  1. Modified clang       │
+                               │     (-fsanitize=thread)  │
+                               │  2. UFO-instrumented     │
+                               │     binary execution     │
+                               │  3. Trace collection     │
+                               └──────────┬──────────────┘
+                                          │
+                                    Execution Traces
+                                          │
+                               ┌──────────▼──────────────┐
+                               │   reorder-main (Host)    │
+                               │                          │
+                               │  Maven + Java 8          │
+                               │  Constraint-based        │
+                               │  reordering analysis     │
+                               │                          │
+                               │  Output: SMT-LIB         │
+                               │  reordering reports      │
+                               └─────────────────────────┘
+```
+
+#### 4.2 Install IRhunter (UFO Docker + Maven)
+
+**Step 1: Pull the UFO Docker image from the IRhunter authors.**
+
+The UFO Docker image is provided by the IRhunter authors at:
+https://hub.docker.com/r/4ndychin/llvm-ufo
+
 ```bash
-# 1. Ensure the UFO Docker container is running and ID is set
+docker pull 4ndychin/llvm-ufo
+```
+
+Image details: ~5 GB, Ubuntu 16.04 base, LLVM 7.0 with modified ThreadSanitizer.
+
+**Step 2: Start a UFO container.**
+
+```bash
+docker run -d --name irhunter-ufo 4ndychin/llvm-ufo tail -f /dev/null
+```
+
+**Step 3: Set the container ID for scripts.**
+
+```bash
 export IRHUNTER_CONTAINER_ID=$(docker ps -q --filter name=irhunter-ufo)
+```
 
-# 2. Enter the IRhunter evaluation directory
+The `dynamic_run.sh` script reads `IRHUNTER_CONTAINER_ID` from the environment
+to communicate with the UFO container (copy files in, run compilation/instrumentation,
+retrieve traces).
+
+**Step 4: Build the reorder-main Maven project.**
+
+```bash
 cd Evaluation/IRhunter
+mvn compile
+```
 
-# 3. Run dynamic data capture (compiles, instruments, and collects traces)
+Requires: JDK 8 and Maven.
+
+#### 4.3 Testing with dynamic_run.sh (Stage 1: UFO Instrumentation)
+
+`dynamic_run.sh` is adapted from the IRhunter authors' original script.
+It performs the following steps for a single bug sample:
+
+1. Copies the C source file into the UFO Docker container
+2. Compiles it with the modified clang (`-fsanitize=thread -g -O0`)
+3. Runs the instrumented binary with UFO enabled (`UFO_ON=1 UFO_CALL=1`)
+4. Collects execution traces back to `./log/<binary_name>/`
+
+Usage:
+```bash
+cd Evaluation/IRhunter
 bash dynamic_run.sh ../../Layer1/21-crossbeam.c
+```
 
-# 4. Run the reordering prediction engine
-mvn exec:java -Dexec.mainClass="tju.edu.cn.reorder.ReorderMain"
+On success, traces are saved to `./log/21-crossbeam/` and `config.properties`
+is automatically updated to point to the new trace directory.
 
-# Or use the loop script to automate repeated attempts:
+#### 4.4 Testing with loop_irhunter.sh (Full Pipeline)
+
+Since concurrency bugs do not always manifest on every execution,
+`loop_irhunter.sh` wraps both Stage 1 (UFO) and Stage 2 (reorder-main)
+into an automated retry loop (up to 10 attempts).
+
+For each attempt it:
+1. Runs `dynamic_run.sh` to collect a fresh set of execution traces
+2. Runs `mvn exec:java` to perform reordering analysis on the traces
+3. Checks if the expected pattern was detected; if so, exits successfully
+4. Otherwise, retries
+
+Usage:
+```bash
+cd Evaluation/IRhunter
 bash loop_irhunter.sh ../../Layer1/21-crossbeam.c
 ```
 
-The `loop_irhunter.sh` script automates Stage 1 + Stage 2 with up to 10 attempts,
-since concurrency bugs may not manifest on every single run. It re-executes both
-stages until the target pattern is detected or the max attempts are exhausted.
+**IMPORTANT:** Before running `loop_irhunter.sh`, edit the `SUCCESS_KEYWORD`
+variable in the script (line 11) to match the expected output pattern for
+the target bug sample. The keyword depends on what IRhunter should detect
+for that particular bug.
 
-**Pre-computed results:**
-The `Evaluation/IRhunter/` directory contains detection reports for 18 bug samples
-(e.g., `1-Linuxeasy`, `2-DPDK`, `4-MySQL`, etc.). Each report file contains the
-raw constraint sets in SMT-LIB format produced by IRhunter's reordering analysis.
-Reviewers can directly inspect these reports to verify the paper's IRhunter findings
-without re-running the full toolchain.
+#### 4.5 Interpreting IRhunter Output
+
+When IRhunter detects a reordering vulnerability, it produces:
+- Execution trace logs under `./log/<binary_name>/`
+- SMT-LIB constraint files showing the specific instruction reordering
+
+The reordering prediction indicates that under a weak memory model, two memory
+accesses could be reordered by the CPU, potentially causing a concurrency bug
+even in otherwise correctly synchronized code.
+
+#### 4.6 Pre-Computed Results
+
+The `Evaluation/IRhunter/` directory contains pre-computed detection reports for
+18 bug samples from Layer1 (files named `1-Linuxeasy`, `2-DPDK`, `4-MySQL`, etc.).
+Each report file contains the raw constraint sets in SMT-LIB format produced by
+IRhunter's reordering analysis. Reviewers can directly inspect these reports to
+verify the paper's IRhunter findings without re-running the full pipeline.
 
 ### 5. Data Provenance
 
@@ -269,13 +531,18 @@ GitHub Issues, CVE Database, etc.) under their respective open-source licenses.
 ### 6. Dataset Structure
 
 ```
-MGO-Artifact/
+Ordering-Related-Concurrency-Bugs-Dataset/
 ├── README.md              # This file (artifact documentation)
 ├── REQUIREMENTS           # Hardware/software requirements and tool versions
 ├── STATUS                 # Badge application and justification
 ├── LICENSE                # CC-BY-4.0
 ├── ABSTRACT.md            # Submission abstract
 ├── DATASET.md             # Detailed dataset description and provenance table
+├── Dockerfile             # Docker build for CBMC + GenMC + Nidhugg
+├── .dockerignore
+├── docker-entrypoint.sh   # Docker container entrypoint
+├── genmc-src/             # GenMC v0.9 source (built inside Docker)
+├── nidhugg-src/           # Nidhugg 0.4 source (built inside Docker)
 ├── Layer1/                # 32 Micro-Instruction Level bug samples (.c, .cpp)
 ├── Layer2/                # 24 Resource Lifecycle Level bug samples (.c)
 ├── Layer3/                # 2 Semantic Logic Level bug samples (.c)
@@ -285,9 +552,9 @@ MGO-Artifact/
     │   ├── Layer2/        # CBMC-formatted source + run_cbmc.sh + results
     │   └── Layer3/        # CBMC-formatted source + run_cbmc.sh + results
     ├── GENMC&Nidhugg/
-    │   ├── Layer1/        # GenMC .ll files for Nidhugg
-    │   ├── Layer2/        # GenMC .ll files for Nidhugg
-    │   ├── Layer3/        # GenMC source (.c) and .ll files + run_genmc_eval.sh
+    │   ├── Layer1/        # GenMC .c + .ll files + run_genmc_eval.sh + results
+    │   ├── Layer2/        # GenMC .c + .ll files + run_genmc_eval.sh + results
+    │   ├── Layer3/        # GenMC .c + .ll files + run_genmc_eval.sh + results
     │   ├── run_nidhugg.sh # Nidhugg batch evaluation script
     │   ├── generate_ll.sh # Script to regenerate .ll files from C sources
     │   ├── nidhugg_detailed.log

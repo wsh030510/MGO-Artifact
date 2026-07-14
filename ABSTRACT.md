@@ -41,15 +41,15 @@ The authors are applying for the following badges:
 
 - Basic familiarity with Linux command line and shell scripting
 - Basic understanding of concurrency bugs and weak memory models
-- Experience with Docker (for running IRhunter components)
+- Experience with Docker (all tools run via Docker containers)
 - No prior experience with CBMC, GenMC, Nidhugg, or IRhunter is required;
   the provided scripts automate their usage.
 
 ## Hardware Requirements
 
 - Architecture: x86_64
-- OS: Linux (tested on Ubuntu 22.04)
-- Storage: ~500 MB for the artifact; additional ~5 GB if building the IRhunter Docker image
+- OS: Linux (tested on Debian 11 / Ubuntu 20.04+)
+- Storage: ~2 GB for the mgo-ae Docker image; additional ~5 GB for the IRhunter UFO Docker image
 - No GPU or other special hardware required
 
 ## Provenance
@@ -63,18 +63,21 @@ The artifact is available at:
 ### Accessing the Artifact
 
 1. Download the artifact from Zenodo (DOI to be provided).
-2. Extract the archive: `unzip MGO-Artifact-main.zip`
-3. Enter the directory: `cd MGO-Artifact-main`
+2. Extract the archive: `tar -xzf MGO-dataset.tar.gz`
+3. Enter the directory: `cd Ordering-Related-Concurrency-Bugs-Dataset`
 
 ### Tools Required
 
-The following tools are pre-installed on the evaluation system:
-- CBMC 5.12 (Bounded Model Checker)
-- GenMC v0.9 (Stateless Model Checker)
-- Nidhugg 0.4 (Stateless Model Checker)
-- Clang 11.0.1 (LLVM IR generator)
-- Docker (for IRhunter/UFO dynamic instrumentation engine)
-- Maven + JDK 8 (for IRhunter reorder-main prediction engine)
+All tools are provided via Docker containers:
+
+**CBMC, GenMC, Nidhugg (pre-built Docker image on Docker Hub):**
+- Pull: `docker pull wangshaohao/mgo-ae:latest` (or build via `docker build -t mgo-ae .`)
+- Contains: CBMC 5.12, GenMC v0.9, Nidhugg 0.4, Clang 11.0.1
+- Source code for GenMC and Nidhugg is included under `genmc-src/` and `nidhugg-src/`
+
+**IRhunter (separate Docker setup):**
+- UFO instrumentation engine: `docker pull 4ndychin/llvm-ufo` (provided by IRhunter authors)
+- Reorder-main analysis engine: Maven + JDK 8 project under `Evaluation/IRhunter/`
 
 ### Getting Started (Smoke Test)
 

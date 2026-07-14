@@ -1,29 +1,36 @@
 Architecture: x86_64
-Operating System: Linux (tested on Ubuntu 22.04)
-Storage: ~500 MB
+Operating System: Linux (tested on Debian 11 / Ubuntu 20.04+)
+Storage: ~2 GB for Docker image, ~500 MB for artifact
 
-=== Tool Versions ===
+=== Docker Image (recommended) ===
 
-CBMC: 5.12 (cbmc-5.12) 64-bit x86_64 linux
+Pre-built Docker image available on Docker Hub:
+  docker pull wangshaohao/mgo-ae:latest
 
-GenMC: v0.9 (commit #b5e7340), built with LLVM 11.0.1
+Alternatively, build from source (included in the artifact):
+  docker build -t mgo-ae .
 
-Nidhugg: 0.4 (9e86fc0e, Release), built with LLVM 11.0.1
+The image contains:
+  - CBMC 5.12 (installed via Debian package)
+  - GenMC v0.9 (compiled from source with LLVM 11.0.1)
+  - Nidhugg 0.4 (compiled from source with LLVM 11.0.1)
+  - Clang 11.0.1 (for generating LLVM IR files)
+  - All 58 benchmark files and evaluation scripts under /benchmarks/
 
-Clang: 11.0.1 (for generating LLVM IR files used by GenMC and Nidhugg)
+=== IRhunter (separate setup) ===
 
-IRhunter (composed of two components):
-  - UFO (dynamic instrumentation engine): Docker image "4ndychin/llvm-ufo" (LLVM 7.1.0 with modified ThreadSanitizer)
+IRhunter is composed of two components:
+  - UFO (dynamic instrumentation engine): Docker image "4ndychin/llvm-ufo"
+    (provided by IRhunter authors, LLVM 7.1.0 with modified ThreadSanitizer)
   - reorder-main (reordering prediction engine): Maven-based Java 8 project
+    (included under Evaluation/IRhunter/)
 
-Additional dependencies:
-  - Docker (for IRhunter/UFO)
-  - Maven + JDK 8 (for IRhunter reorder-main)
+Additional IRhunter dependencies:
+  - Docker (for UFO container)
+  - Maven + JDK 8 (for reorder-main)
+
+=== Dependencies ===
+
+  - Docker 20.10+ (for running all tools)
   - Bash (for all automation scripts)
-
-=== Machine-Readable Dependencies ===
-  - CBMC: installed via system package manager (apt)
-  - GenMC: built from source (https://github.com/MPI-SWS/genmc)
-  - Nidhugg: installed via system package manager
-  - IRhunter/UFO: Docker image "4ndychin/llvm-ufo" (https://hub.docker.com/r/4ndychin/llvm-ufo)
-  - IRhunter/reorder-main: Maven project, pom.xml included in the artifact
+  - Maven + JDK 8 (for IRhunter reorder-main only)
